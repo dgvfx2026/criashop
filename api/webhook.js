@@ -1,8 +1,8 @@
 // api/webhook.js — Vercel Serverless Function
 // Recebe webhook do Kiwify → insere comprador no Supabase
+// Payload real do Kiwify mapeado via diagnóstico
 
 export default async function handler(req, res) {
-  // Só aceita POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
@@ -10,60 +10,53 @@ export default async function handler(req, res) {
   try {
     const body = req.body
 
-    // Log completo do payload para debug
     console.log('=== KIWIFY WEBHOOK ===')
-    console.log('Headers:', JSON.stringify(req.headers))
-    console.log('Body:', JSON.stringify(body))
-    console.log('======================')
+    console.log('webhook_event_type:', body?.webhook_event_type)
+    console.log('Customer.email:', body?.Customer?.email)
+    console.log('Customer.full_name:', body?.Customer?.full_name)
 
-    // Extrai email tentando todos os caminhos possíveis do Kiwify
-    const email = (
-      body?.data?.purchase?.buyer_email ||
-      body?.purchase?.buyer_email ||
-      body?.buyer_email ||
-      body?.email ||
-      ''
-    ).toLowerCase().trim()
+    // ── Verificar evento ─────────────────────────────────────
+    // Kiwify usa webhook_event_type (não "event")
+    const evento = body?.webhook_event_type || ''
 
-    const nome = (
-      body?.data?.purchase?.buyer_name ||
-      body?.purchase?.buyer_name ||
-      body?.buyer_name ||
-      body?.nome ||
-      ''
-    ).trim()
+    if (evento && evento !== 'order_approved') {
+      console.log('Evento ignorado:', evento)
+      return res.status(200).json({ ok: true, msg: 'Evento ignorado: ' + evento })
+    }
 
-    const evento = body?.event || 'sem_evento'
-    console.log('Evento:', evento, '| Email:', email, '| Nome:', nome)
+    // ── Extrair dados do payload real do Kiwify ──────────────
+    // Email: body.Customer.email
+    // Nome:  body.Customer.full_name
+    const email = (body?.Customer?.email || '').toLowerCase().trim()
+    const nome  = (body?.Customer?.full_name || body?.Customer?.first_name || '').trim()
 
-    // Se não tiver email válido (ex: teste do Kiwify sem dados reais)
     if (!email || !email.includes('@')) {
       console.log('Sem email válido no payload')
       return res.status(200).json({ ok: true, msg: 'Sem email no payload' })
     }
 
-    // Insere no Supabase via REST
+    // ── Inserir no Supabase ──────────────────────────────────
     const supabaseUrl = process.env.SUPABASE_URL
     const serviceKey  = process.env.SUPABASE_SERVICE_KEY
 
     if (!supabaseUrl || !serviceKey) {
-      console.error('ERRO: variáveis SUPABASE_URL ou SUPABASE_SERVICE_KEY não configuradas!')
+      console.error('ERRO: variáveis de ambiente não configuradas!')
       return res.status(500).json({ error: 'Variáveis de ambiente não configuradas' })
     }
 
     const supabaseRes = await fetch(`${supabaseUrl}/rest/v1/compradores_shop`, {
       method: 'POST',
       headers: {
-        'apikey': serviceKey,
-        'Authorization': `Bearer ${serviceKey}`,
-        'Content-Type': 'application/json',
-        'Prefer': 'resolution=merge-duplicates',
+        'apikey':          serviceKey,
+        'Authorization':   `Bearer ${serviceKey}`,
+        'Content-Type':    'application/json',
+        'Prefer':          'resolution=merge-duplicates',
       },
       body: JSON.stringify({
         email,
-        nome: nome || null,
-        ativo: true,
-        origem: 'kiwify',
+        nome:    nome || null,
+        ativo:   true,
+        origem:  'kiwify',
       }),
     })
 
@@ -74,7 +67,7 @@ export default async function handler(req, res) {
       throw new Error(`Supabase erro ${supabaseRes.status}: ${resText}`)
     }
 
-    console.log('✅ Comprador inserido:', email)
+    console.log('✅ Comprador inserido:', email, '|', nome)
     return res.status(200).json({ success: true, email })
 
   } catch (err) {
