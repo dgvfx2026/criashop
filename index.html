@@ -382,22 +382,27 @@ hr.sec{border:none;border-top:1px solid var(--border)}
 }
 @media(max-width:900px){
   #login-gate{flex-direction:column;overflow-y:auto}
-  .lg-left{padding:28px 24px 20px;flex:none}
-  .lg-kicker{margin-bottom:16px;font-size:10px}
-  .lg-title{font-size:clamp(24px,6vw,36px);margin-bottom:12px}
-  .lg-desc{font-size:14px;margin-bottom:24px;display:none}
-  .lg-stats{gap:20px;margin-bottom:0}
-  .lg-stat .n{font-size:22px}
+  .lg-left{padding:36px 28px 24px;flex:none;text-align:center;align-items:center}
+  .lg-kicker{margin-bottom:20px;justify-content:center}
+  .lg-title{font-size:clamp(30px,8vw,42px);margin-bottom:14px;text-align:center}
+  .lg-desc{font-size:15px;margin-bottom:28px;max-width:100%;display:block;text-align:center}
+  .lg-stats{gap:28px;justify-content:center}
+  .lg-stat{text-align:center}
+  .lg-stat .n{font-size:26px}
   .lg-visual{display:none}
-  .lg-right{width:100%;flex:none;border-left:none;border-top:1px solid rgba(255,255,255,0.06);padding:24px 20px 32px}
-  .lg-card{max-width:100%}
-  .lg-card-icon{width:40px;height:40px;font-size:18px;margin-bottom:18px}
-  .lg-card h2{font-size:22px}
-  .lg-card-sub{font-size:13px;margin-bottom:22px}
+  .lg-right{width:100%;flex:none;border-left:none;border-top:1px solid rgba(255,255,255,0.06);padding:32px 28px 40px;display:flex;justify-content:center}
+  .lg-card{max-width:420px;width:100%}
+  .lg-card-icon{width:48px;height:48px;font-size:20px;margin-bottom:22px}
+  .lg-card h2{font-size:26px}
+  .lg-card-sub{font-size:14px;margin-bottom:26px}
+  .lg-input{font-size:16px;padding:15px 18px}
+  .lg-btn{padding:16px;font-size:15px}
 }
 @media(max-width:480px){
-  .lg-left{padding:20px 18px 16px}
-  .lg-right{padding:20px 18px 28px}
+  .lg-left{padding:28px 22px 20px}
+  .lg-right{padding:28px 22px 36px}
+  .lg-title{font-size:clamp(26px,8vw,36px)}
+  .lg-stats{gap:20px}
 }
 .lg-card{width:100%;max-width:380px}
 .lg-card-icon{
@@ -481,25 +486,24 @@ hr.sec{border:none;border-top:1px solid var(--border)}
 
 /* STEPS MOBILE FIX */
 @media(max-width:600px){
-  .how-steps{gap:24px}
-  .how-step{gap:16px;align-items:flex-start}
-  .step-bubble{width:36px;height:36px;font-size:14px;flex-shrink:0}
-  .step-body h3{font-size:16px}
-  .step-body p{font-size:13px}
-  .step-tools{gap:6px}
-  .step-tool{font-size:11px;padding:4px 10px}
+  .how-steps{gap:28px}
+  .how-step{gap:18px;align-items:flex-start}
+  .step-bubble{width:40px;height:40px;font-size:15px;flex-shrink:0}
+  .step-body h3{font-size:17px}
+  .step-body p{font-size:14px;line-height:1.65}
+  .step-tools{gap:8px;margin-top:12px}
+  .step-tool{font-size:12px;padding:5px 12px}
 }
 
 /* GENERAL MOBILE FIXES */
 @media(max-width:600px){
-  .section{padding:56px 0}
-  .sec-title{font-size:clamp(24px,7vw,36px)}
-  .tips-grid{gap:12px}
-  .tip-card{padding:20px}
-  .faq-q{font-size:14px;padding:16px 18px}
-  .faq-a-inner{font-size:13px;padding:0 18px 16px}
-  .wrap{padding:0 18px}
-  .wrap-sm{padding:0 18px}
+  .wrap{padding:0 20px}
+  .wrap-sm{padding:0 20px}
+  .section{padding:60px 0}
+  .tips-grid{gap:14px}
+  .tip-card{padding:22px}
+  .faq-q{font-size:14px;padding:16px 20px}
+  .faq-a-inner{font-size:13px;line-height:1.65}
 }
 </style>
 
@@ -2057,12 +2061,14 @@ hr.sec{border:none;border-top:1px solid var(--border)}
       <h2 class="sec-title">Como usar esses <span class="hl">prompts</span></h2>
     </div>
     <div class="how-steps">
+
       <div class="how-step reveal">
         <div class="step-bubble">1</div>
         <div class="step-body">
           <h3>Copie o prompt</h3>
           <p>Clique no botão 📋 em qualquer card para copiar o prompt automaticamente para a área de transferência.</p>
         </div>
+      </div>
 
       <div class="how-step reveal delay-1">
         <div class="step-bubble">2</div>
@@ -2074,12 +2080,14 @@ hr.sec{border:none;border-top:1px solid var(--border)}
           </div>
         </div>
       </div>
+
       <div class="how-step reveal delay-2">
         <div class="step-bubble">3</div>
         <div class="step-body">
           <h3>Adicione sua referência (Virais)</h3>
           <p>Para os prompts de vídeos virais, adicione uma imagem de referência do personagem. Para os prompts de TikTok Shop, substitua [PRODUTO] pelo nome do seu produto.</p>
         </div>
+      </div>
 
       <div class="how-step reveal delay-3">
         <div class="step-bubble">4</div>
@@ -2087,6 +2095,7 @@ hr.sec{border:none;border-top:1px solid var(--border)}
           <h3>Gere e publique</h3>
           <p>Gere o vídeo, baixe, adicione o áudio se necessário, e publique no TikTok. Teste variações do mesmo prompt para encontrar o melhor resultado.</p>
         </div>
+      </div>
 
     </div>
   </div>
