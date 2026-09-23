@@ -1,0 +1,2422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>CRIA Shop — Prompts para TikTok Shop & Virais</title>
+<meta name="description" content="Pack de prompts de IA para TikTok Shop. Vídeos virais para crescer a conta e vídeos de produto para vender. Método profissional.">
+<meta name="theme-color" content="#050208">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pink:#FF2D55;--pink-d:#cc1f40;--pink-l:rgba(255,45,85,0.12);
+  --purple:#9333EA;--purple-l:rgba(147,51,234,0.1);
+  --green:#10B981;--amber:#F59E0B;--red:#EF4444;
+  --dark:#05020E;--dark2:#0A0616;--dark3:#0F0B1F;--dark4:#16112A;
+  --text:#F5F0FF;--muted:rgba(220,215,255,0.48);--subtle:rgba(200,195,255,0.22);
+  --border:rgba(255,255,255,0.07);--border-p:rgba(255,45,85,0.22);
+  --grad:linear-gradient(135deg,#FF2D55,#9333EA);
+  --grad-r:linear-gradient(135deg,#9333EA,#FF2D55);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--dark);color:var(--text);line-height:1.65;overflow-x:hidden}
+
+/* BG */
+.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%,rgba(147,51,234,0.10) 0%,transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 70%,rgba(255,45,85,0.04) 0%,transparent 60%)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:256px 256px}
+
+/* LAYOUT */
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+.wrap-sm{max-width:780px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+/* NAV */
+.nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 24px;transition:background .3s,border-color .3s}
+.nav.scrolled{background:rgba(5,2,14,0.88);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-size:16px;font-weight:800;letter-spacing:1px;color:#F5F0FF;display:flex;align-items:center;gap:8px}
+.nav-logo span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-badge{font-size:10px;font-weight:700;letter-spacing:1px;background:var(--pink-l);border:1px solid rgba(255,45,85,0.3);color:var(--pink);padding:3px 10px;border-radius:20px}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}.delay-5{transition-delay:.5s}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:0 24px;
+  position:relative;overflow:hidden;
+  background:var(--dark);
+}
+.hero::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent 5%,rgba(147,51,234,0.5) 35%,rgba(255,45,85,0.7) 50%,rgba(147,51,234,0.5) 65%,transparent 95%);
+  box-shadow:0 0 24px rgba(147,51,234,0.4);
+  z-index:2;
+}
+.hero::before{
+  content:'';position:absolute;
+  top:-180px;left:50%;transform:translateX(-50%);
+  width:800px;height:400px;
+  background:radial-gradient(ellipse,rgba(147,51,234,0.12) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
+}
+.hero-inner{
+  position:relative;z-index:1;
+  text-align:center;
+  max-width:760px;
+  margin:0 auto;
+  padding:130px 0 80px;
+  display:flex;flex-direction:column;align-items:center;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(147,51,234,0.75);
+  margin-bottom:28px;
+}
+.hero-kicker::before,.hero-kicker::after{
+  content:'';width:28px;height:1px;background:rgba(147,51,234,0.3);flex-shrink:0;
+}
+.hero h1{
+  font-size:clamp(36px,5.5vw,68px);
+  font-weight:800;
+  line-height:1.06;
+  letter-spacing:-2.5px;
+  color:#F5F0FF;
+  margin-bottom:16px;
+}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 em{
+  font-style:italic;
+  font-weight:300;
+  color:rgba(200,195,255,0.55);
+  font-size:0.92em;
+  letter-spacing:-1px;
+}
+.hero-sub{
+  font-size:17px;color:rgba(240,235,255,0.42);
+  line-height:1.8;margin-bottom:44px;
+  max-width:520px;text-align:center;
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:44px}
+.hero-tag{font-size:12px;font-weight:700;letter-spacing:.5px;padding:6px 14px;border-radius:20px;border:1px solid;white-space:nowrap}
+.ht-pink{background:rgba(255,45,85,0.1);color:#FF6B85;border-color:rgba(255,45,85,0.25)}
+.ht-purple{background:rgba(147,51,234,0.1);color:#B77FFF;border-color:rgba(147,51,234,0.25)}
+.ht-teal{background:rgba(16,185,129,0.1);color:#6EE7B7;border-color:rgba(16,185,129,0.25)}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--grad);
+  color:#fff;font-size:15px;font-weight:700;
+  padding:17px 38px;border-radius:100px;
+  text-decoration:none;
+  box-shadow:0 0 0 1px rgba(255,45,85,0.15),0 8px 36px rgba(147,51,234,0.4);
+  transition:all .25s;letter-spacing:0.3px;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,45,85,0.25),0 12px 48px rgba(147,51,234,0.55)}
+
+/* STATS */
+.stats-bar{background:var(--dark2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px 0}
+.stats-inner{display:flex;justify-content:center;gap:0;flex-wrap:wrap}
+.stat-item{text-align:center;padding:0 40px;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-n{font-size:clamp(28px,3vw,40px);font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1}
+.stat-l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+@media(max-width:600px){.stat-item{padding:16px 20px;border-right:none;border-bottom:1px solid var(--border)}.stat-item:last-child{border-bottom:none}}
+
+/* SECTION */
+.section{padding:96px 0}
+
+/* SEC HEADER */
+.sec-header{text-align:center;margin-bottom:56px;position:relative}
+.sec-kicker{
+  font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(147,51,234,0.7);
+  margin-bottom:18px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.sec-kicker::before,.sec-kicker::after{
+  content:'';width:20px;height:1px;background:rgba(147,51,234,0.25);flex-shrink:0;
+}
+.sec-title{
+  font-size:clamp(26px,4vw,48px);
+  font-weight:800;letter-spacing:-1.5px;line-height:1.1;
+  color:#F5F0FF;
+  margin-bottom:14px;
+}
+.sec-title .hl{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sec-sub{
+  font-size:16px;color:rgba(220,215,255,0.42);
+  line-height:1.75;max-width:560px;margin:0 auto;
+}
+
+/* MARQUEE */
+.marquee-wrap{overflow:hidden;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--dark2);position:relative}
+.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2}
+.marquee-wrap::before{left:0;background:linear-gradient(to right,var(--dark2),transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(to left,var(--dark2),transparent)}
+.marquee-track{display:flex;gap:0;width:max-content;animation:marquee 32s linear infinite}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:flex;align-items:center;padding:0 48px;white-space:nowrap;font-size:13px;font-weight:700;letter-spacing:1px;color:var(--subtle);text-transform:uppercase;gap:12px}
+.marquee-item::after{content:'·';color:rgba(255,45,85,0.4)}
+
+/* CATEGORY TABS */
+.cat-tabs{display:flex;justify-content:center;gap:12px;margin-bottom:48px;flex-wrap:wrap}
+.cat-tab{padding:10px 24px;border-radius:100px;border:1px solid var(--border);font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;color:var(--muted);background:transparent}
+.cat-tab:hover{border-color:rgba(255,45,85,0.3);color:var(--text)}
+.cat-tab.active{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 4px 20px rgba(147,51,234,0.35)}
+
+/* PROMPT CATEGORY SECTION */
+.cat-section{display:none}
+.cat-section.active{display:block}
+
+/* PROMPT GROUP */
+.prompt-group{margin-bottom:16px;background:var(--dark2);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:border-color .25s}
+.prompt-group.open{border-color:rgba(255,45,85,0.22)}
+.prompt-group-header{display:flex;align-items:center;gap:20px;padding:22px 26px;cursor:pointer;user-select:none;transition:background .2s}
+.prompt-group-header:hover{background:rgba(255,255,255,0.025)}
+.pg-toggle{width:34px;height:34px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;flex-shrink:0;line-height:1;font-size:16px;transform:rotate(0deg)}
+.prompt-group.open .pg-toggle{border-color:rgba(255,45,85,0.35);color:var(--pink);background:rgba(255,45,85,0.08);transform:rotate(180deg)}
+.pg-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(0.4,0,0.2,1)}
+.prompt-group.open .pg-body{max-height:9999px}
+.pg-body-inner{padding:0 26px 26px}
+.pg-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.pg-pink{background:rgba(255,45,85,0.12);border:1px solid rgba(255,45,85,0.2)}
+.pg-purple{background:rgba(147,51,234,0.12);border:1px solid rgba(147,51,234,0.2)}
+.pg-teal{background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.2)}
+.pg-amber{background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.2)}
+.pg-blue{background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.2)}
+.pg-info{flex:1;min-width:0}
+.pg-info h3{font-size:18px;font-weight:800;margin-bottom:3px}
+.pg-info p{font-size:13px;color:var(--muted);line-height:1.55}
+.prompt-group.open .prompt-group-header{border-bottom:1px solid rgba(255,255,255,0.06)}
+.pg-count{font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 12px;border-radius:20px;background:var(--pink-l);color:var(--pink);border:1px solid rgba(255,45,85,0.2);white-space:nowrap;flex-shrink:0}
+
+/* PROMPT GRID */
+.prompt-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:768px){.prompt-grid{grid-template-columns:1fr}}
+
+/* PROMPT CARD */
+.prompt-card{background:var(--dark2);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:border-color .25s,transform .2s}
+.prompt-card:hover{border-color:rgba(255,45,85,0.25);transform:translateY(-2px)}
+.pc-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px 0}
+.pc-num{font-size:11px;font-weight:700;letter-spacing:1px;color:var(--subtle)}
+.pc-copy{width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:14px}
+.pc-copy:hover{border-color:rgba(255,45,85,0.4);color:var(--pink);background:rgba(255,45,85,0.06)}
+.pc-copy.copied{border-color:rgba(16,185,129,0.4);color:#10B981;background:rgba(16,185,129,0.08)}
+.pc-body{padding:14px 20px 20px}
+.pc-title{font-size:13px;font-weight:800;color:rgba(255,255,255,0.85);margin-bottom:8px;letter-spacing:.2px}
+.pc-text{font-size:12.5px;color:var(--muted);line-height:1.75;font-family:inherit}
+.pc-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.5px;padding:3px 10px;border-radius:10px;margin-top:12px}
+.pt-viral{background:rgba(255,45,85,0.1);color:#FF6B85;border:1px solid rgba(255,45,85,0.2)}
+.pt-roça{background:rgba(245,158,11,0.1);color:#FCD34D;border:1px solid rgba(245,158,11,0.2)}
+.pt-familia{background:rgba(59,130,246,0.1);color:#93C5FD;border:1px solid rgba(59,130,246,0.2)}
+.pt-crianca{background:rgba(236,72,153,0.1);color:#F9A8D4;border:1px solid rgba(236,72,153,0.2)}
+.pt-mulher{background:rgba(147,51,234,0.1);color:#C4B5FD;border:1px solid rgba(147,51,234,0.2)}
+.pt-pov{background:rgba(16,185,129,0.1);color:#6EE7B7;border:1px solid rgba(16,185,129,0.2)}
+.pt-espelho{background:rgba(99,102,241,0.1);color:#A5B4FC;border:1px solid rgba(99,102,241,0.2)}
+.pt-selfie{background:rgba(245,158,11,0.1);color:#FCD34D;border:1px solid rgba(245,158,11,0.2)}
+.pt-unboxing{background:rgba(239,68,68,0.1);color:#FCA5A5;border:1px solid rgba(239,68,68,0.2)}
+.pt-demo{background:rgba(14,165,233,0.1);color:#7DD3FC;border:1px solid rgba(14,165,233,0.2)}
+.pt-moda{background:rgba(236,72,153,0.1);color:#F9A8D4;border:1px solid rgba(236,72,153,0.2)}
+.pt-ugc{background:rgba(168,85,247,0.1);color:#D8B4FE;border:1px solid rgba(168,85,247,0.2)}
+
+/* HOW IT WORKS */
+.how-steps{display:flex;flex-direction:column;gap:0;margin-top:48px;position:relative}
+.how-steps::before{content:'';position:absolute;left:27px;top:56px;bottom:56px;width:1px;background:linear-gradient(to bottom,var(--pink),rgba(147,51,234,0.1));opacity:.4}
+.how-step{display:flex;gap:24px;align-items:flex-start;padding:24px 0}
+.step-bubble{width:56px;height:56px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;flex-shrink:0;position:relative;z-index:1}
+.step-body h3{font-size:18px;font-weight:800;margin-bottom:6px}
+.step-body p{font-size:15px;color:var(--muted);line-height:1.65}
+.step-body .step-tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.step-tool{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6)}
+
+/* TIPS GRID */
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+@media(max-width:768px){.tips-grid{grid-template-columns:1fr}}
+.tip-card{background:var(--dark2);border:1px solid var(--border);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:border-color .25s}
+.tip-card:hover{border-color:rgba(147,51,234,0.3)}
+.tip-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(147,51,234,0.4),transparent)}
+.tip-icon{font-size:28px;margin-bottom:14px}
+.tip-card h3{font-size:15px;font-weight:800;margin-bottom:8px}
+.tip-card p{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* TOOLS SECTION */
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+@media(max-width:768px){.tools-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.tools-grid{grid-template-columns:1fr}}
+.tool-card{background:var(--dark2);border:1px solid var(--border);border-radius:16px;padding:24px;transition:border-color .25s,transform .2s}
+.tool-card:hover{border-color:rgba(255,45,85,0.3);transform:translateY(-3px)}
+.tool-name{font-size:15px;font-weight:800;margin-bottom:4px}
+.tool-desc{font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.55}
+.tool-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px}
+.tb-free{background:rgba(16,185,129,0.1);color:#6EE7B7;border:1px solid rgba(16,185,129,0.2)}
+.tb-paid{background:rgba(245,158,11,0.1);color:#FCD34D;border:1px solid rgba(245,158,11,0.2)}
+.tb-rec{background:rgba(255,45,85,0.1);color:#FF6B85;border:1px solid rgba(255,45,85,0.2)}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:48px}
+.faq-item{background:var(--dark2);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.faq-q{padding:20px 24px;font-size:15px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:background .2s;user-select:none}
+.faq-q:hover{background:rgba(255,255,255,0.02)}
+.faq-q::after{content:'＋';font-size:20px;color:var(--muted);transition:transform .3s;flex-shrink:0;font-weight:300}
+.faq-item.open .faq-q{color:rgba(255,107,133,0.9)}
+.faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--pink)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:400px}
+.faq-a-inner{padding:0 24px 20px;font-size:14px;color:rgba(220,215,255,0.6);line-height:1.75}
+
+/* FOOTER */
+.footer{padding:48px 0;border-top:1px solid var(--border);text-align:center}
+.footer p{font-size:13px;color:var(--subtle)}
+
+/* FLOAT SCROLL TOP */
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--dark2);border:1px solid var(--border);color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:all .3s;opacity:0;transform:translateY(20px)}
+.scroll-top.visible{opacity:1;transform:translateY(0)}
+.scroll-top:hover{border-color:rgba(255,45,85,0.4);color:var(--pink)}
+
+/* EXPAND BAR */
+.expand-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding:10px 0}
+.expand-bar-label{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--subtle)}
+.expand-bar-btns{display:flex;gap:8px}
+.expand-btn{font-size:12px;font-weight:700;padding:7px 16px;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap}
+.expand-btn:hover{border-color:rgba(255,45,85,0.35);color:var(--pink);background:rgba(255,45,85,0.06)}
+
+/* INCLUDE NOTE */
+.include-note{background:rgba(147,51,234,0.08);border:1px solid rgba(147,51,234,0.2);border-radius:14px;padding:20px 24px;margin-bottom:32px;display:flex;gap:14px;align-items:flex-start}
+.in-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.in-text{font-size:14px;color:rgba(220,215,255,0.72);line-height:1.65}
+.in-text strong{color:#C4B5FD}
+
+hr.sec{border:none;border-top:1px solid var(--border)}
+
+/* ============================================================
+   LOGIN GATE
+   ============================================================ */
+#login-gate{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--dark);
+  display:flex;align-items:stretch;
+  transition:opacity .5s ease,transform .5s ease;
+}
+#login-gate.hiding{opacity:0;pointer-events:none}
+
+/* LEFT PANEL */
+.lg-left{
+  flex:1;display:flex;flex-direction:column;justify-content:center;
+  padding:60px 64px;position:relative;overflow:hidden;
+}
+.lg-left::before{
+  content:'';position:absolute;top:-100px;left:-100px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(147,51,234,0.12) 0%,transparent 65%);
+  pointer-events:none;
+}
+.lg-left::after{
+  content:'';position:absolute;bottom:-80px;right:-60px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,45,85,0.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+.lg-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(147,51,234,0.75);margin-bottom:32px;
+}
+.lg-kicker::before{content:'◆';font-size:8px}
+.lg-title{
+  font-size:clamp(32px,4vw,58px);font-weight:800;
+  line-height:1.05;letter-spacing:-2px;
+  color:#F5F0FF;margin-bottom:20px;
+}
+.lg-title .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.lg-desc{font-size:16px;color:rgba(220,215,255,0.42);line-height:1.75;max-width:420px;margin-bottom:48px}
+.lg-stats{display:flex;gap:40px;flex-wrap:wrap}
+.lg-stat .n{font-size:28px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.lg-stat .l{font-size:12px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.lg-visual{
+  margin-top:48px;
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);
+  border-radius:16px;padding:20px 24px;
+  display:flex;align-items:center;gap:16px;max-width:360px;
+  position:relative;z-index:1;
+}
+.lg-visual-dot{width:8px;height:8px;border-radius:50%;background:var(--grad);flex-shrink:0;box-shadow:0 0 8px rgba(255,45,85,0.5)}
+.lg-visual-text{font-size:13px;color:rgba(200,195,255,0.5);font-family:monospace;letter-spacing:.5px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.lg-visual-icon{width:28px;height:28px;border-radius:8px;background:rgba(255,45,85,0.12);border:1px solid rgba(255,45,85,0.2);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;cursor:pointer;transition:all .2s}
+.lg-visual-icon:hover{background:rgba(255,45,85,0.2)}
+
+/* RIGHT PANEL — CARD */
+.lg-right{
+  width:480px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  padding:40px 48px;
+  background:rgba(10,6,22,0.6);
+  border-left:1px solid rgba(255,255,255,0.06);
+  position:relative;
+}
+@media(max-width:900px){
+  #login-gate{flex-direction:column}
+  .lg-left{padding:40px 28px;flex:none}
+  .lg-right{width:100%;flex:1;border-left:none;border-top:1px solid rgba(255,255,255,0.06);padding:32px 28px}
+  .lg-stats{gap:24px}
+  .lg-visual{display:none}
+}
+.lg-card{width:100%;max-width:380px}
+.lg-card-icon{
+  width:52px;height:52px;border-radius:16px;
+  background:rgba(147,51,234,0.12);border:1px solid rgba(147,51,234,0.25);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:28px;
+}
+.lg-card-welcome{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(147,51,234,0.7);margin-bottom:14px}
+.lg-card h2{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:8px}
+.lg-card-sub{font-size:14px;color:rgba(200,195,255,0.45);line-height:1.6;margin-bottom:32px}
+.lg-card-sub a{color:rgba(147,51,234,0.7);text-decoration:none;border-bottom:1px solid rgba(147,51,234,0.3)}
+.lg-label{font-size:13px;font-weight:700;color:rgba(220,215,255,0.7);margin-bottom:8px;display:block}
+.lg-input-wrap{position:relative;margin-bottom:14px}
+.lg-input{
+  width:100%;background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:12px;padding:14px 18px;
+  font-size:15px;font-family:inherit;
+  color:#F5F0FF;outline:none;
+  transition:border-color .2s,background .2s;
+}
+.lg-input::placeholder{color:rgba(200,195,255,0.3)}
+.lg-input:focus{border-color:rgba(147,51,234,0.5);background:rgba(147,51,234,0.05)}
+.lg-input.error{border-color:rgba(239,68,68,0.5);background:rgba(239,68,68,0.04)}
+.lg-input.success{border-color:rgba(16,185,129,0.5);background:rgba(16,185,129,0.04)}
+.lg-btn{
+  width:100%;padding:15px;border-radius:12px;border:none;cursor:pointer;
+  background:var(--grad);color:#fff;font-size:15px;font-weight:700;
+  font-family:inherit;transition:all .25s;letter-spacing:.2px;
+  box-shadow:0 4px 24px rgba(147,51,234,0.3);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.lg-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 6px 32px rgba(147,51,234,0.45)}
+.lg-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.lg-btn .btn-spinner{
+  width:16px;height:16px;border:2px solid rgba(255,255,255,0.3);
+  border-top-color:#fff;border-radius:50%;
+  animation:spin .7s linear infinite;display:none;
+}
+.lg-btn.loading .btn-spinner{display:block}
+.lg-btn.loading .btn-text{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lg-msg{
+  margin-top:12px;padding:11px 16px;border-radius:10px;
+  font-size:13px;font-weight:600;display:none;align-items:center;gap:8px;
+}
+.lg-msg.show{display:flex}
+.lg-msg.err{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);color:#FCA5A5}
+.lg-msg.ok{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);color:#6EE7B7}
+.lg-footer{margin-top:28px;display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.06)}
+.lg-footer a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:6px}
+.lg-footer a:hover{color:var(--text)}
+.lg-footer a .lf-arrow{font-size:11px;opacity:.6}
+
+/* NAV LOGOUT BTN */
+.nav-logout{
+  font-size:12px;font-weight:700;padding:7px 16px;border-radius:100px;
+  border:1px solid rgba(255,255,255,0.1);background:transparent;
+  color:var(--muted);cursor:pointer;transition:all .2s;display:none;
+  letter-spacing:.3px;
+}
+.nav-logout:hover{border-color:rgba(255,45,85,0.35);color:var(--pink)}
+.nav-logout.show{display:block}
+.nav-user{font-size:12px;color:var(--muted);display:none;letter-spacing:.3px}
+.nav-user.show{display:flex;align-items:center;gap:10px}
+</style>
+
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF2D55'/%3E%3Cstop offset='100%25' stop-color='%239333EA'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='16' fill='url(%23g)'/%3E%3Ctext x='16' y='21' font-family='Arial Black,sans-serif' font-size='14' font-weight='900' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- ============================================================
+     LOGIN GATE
+     ============================================================ -->
+<div id="login-gate">
+
+  <!-- LEFT PANEL -->
+  <div class="lg-left">
+    <div class="lg-kicker">CRIA Shop Pack · Acesso exclusivo</div>
+    <h1 class="lg-title">
+      Seus prompts<br>
+      estão <span class="grad">aqui.</span>
+    </h1>
+    <p class="lg-desc">
+      Entre no CRIA Shop e encontre o ponto de partida para os seus próximos vídeos virais e conteúdos de produto.
+    </p>
+    <div class="lg-stats">
+      <div class="lg-stat"><div class="n">110+</div><div class="l">Prompts</div></div>
+      <div class="lg-stat"><div class="n">12</div><div class="l">Categorias</div></div>
+      <div class="lg-stat"><div class="n">2</div><div class="l">Objetivos</div></div>
+    </div>
+    <div class="lg-visual">
+      <div class="lg-visual-dot"></div>
+      <div class="lg-visual-text" id="lgVisualText">aguardando autenticação...</div>
+      <div class="lg-visual-icon" title="Copy">↗</div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="lg-right">
+    <div class="lg-card">
+      <div class="lg-card-icon">🔐</div>
+      <div class="lg-card-welcome">Bem-vindo ao CRIA Shop</div>
+      <h2>Seu espaço.<br>Suas possibilidades.</h2>
+      <p class="lg-card-sub">
+        Use o mesmo e-mail da compra para acessar a sua biblioteca de prompts.
+        Ainda não tem o pack? <a href="#" target="_blank">Comprar agora →</a>
+      </p>
+
+      <label class="lg-label" for="lg-email">Seu e-mail de compra</label>
+      <div class="lg-input-wrap">
+        <input
+          type="email"
+          id="lg-email"
+          class="lg-input"
+          placeholder="seu@email.com"
+          autocomplete="email"
+          autocapitalize="none"
+          spellcheck="false"
+        >
+      </div>
+
+      <button class="lg-btn" id="lg-btn" onclick="verificarAcesso()">
+        <span class="btn-text">Verificar acesso</span>
+        <div class="btn-spinner"></div>
+      </button>
+
+      <div class="lg-msg" id="lg-msg"></div>
+
+      <div class="lg-footer">
+        <a href="https://wa.me/SEUNUMERO" target="_blank">
+          <span>Problema com o acesso? Falar com suporte</span>
+          <span class="lf-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- END LOGIN GATE -->
+
+<div class="bg-glow"></div>
+<div class="grain"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <span class="nav-logo">CRIA <span>Shop</span></span>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span class="nav-user" id="navUser"></span>
+      <button class="nav-logout" id="navLogout" onclick="logout()">Sair</button>
+      <span class="nav-badge">UPSELL PACK</span>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker reveal">Pack exclusivo · TikTok Shop</div>
+    <h1 class="reveal delay-1">
+      Prompts que fazem<br>
+      a IA criar vídeos que <span class="grad">vendem</span>
+    </h1>
+    <p class="hero-sub reveal delay-2">
+      Mais de 100 prompts profissionais divididos em duas categorias: vídeos virais para crescer a conta e vídeos de produto para converter no TikTok Shop.
+    </p>
+    <div class="hero-tags reveal delay-3">
+      <span class="hero-tag ht-pink">🎬 Vídeos Virais</span>
+      <span class="hero-tag ht-purple">🛍️ TikTok Shop</span>
+      <span class="hero-tag ht-teal">✂️ Copy-Paste Ready</span>
+      <span class="hero-tag ht-pink">🇧🇷 Português Brasileiro</span>
+      <span class="hero-tag ht-purple">📱 Formato Vertical 9:16</span>
+    </div>
+    <a href="#prompts" class="btn-primary reveal delay-4">
+      Ver todos os prompts
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item reveal"><div class="stat-n">100+</div><div class="stat-l">Prompts prontos</div></div>
+    <div class="stat-item reveal delay-1"><div class="stat-n">12</div><div class="stat-l">Categorias</div></div>
+    <div class="stat-item reveal delay-2"><div class="stat-n">2</div><div class="stat-l">Objetivos</div></div>
+    <div class="stat-item reveal delay-3"><div class="stat-n">9:16</div><div class="stat-l">Formato vertical</div></div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item">Vídeos Virais</div>
+    <div class="marquee-item">TikTok Shop</div>
+    <div class="marquee-item">POV</div>
+    <div class="marquee-item">Espelho</div>
+    <div class="marquee-item">Unboxing</div>
+    <div class="marquee-item">Demonstração</div>
+    <div class="marquee-item">Moda</div>
+    <div class="marquee-item">UGC</div>
+    <div class="marquee-item">Vídeos Virais</div>
+    <div class="marquee-item">TikTok Shop</div>
+    <div class="marquee-item">POV</div>
+    <div class="marquee-item">Espelho</div>
+    <div class="marquee-item">Unboxing</div>
+    <div class="marquee-item">Demonstração</div>
+    <div class="marquee-item">Moda</div>
+    <div class="marquee-item">UGC</div>
+  </div>
+</div>
+
+<!-- PROMPTS SECTION -->
+<section class="section" id="prompts">
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div class="sec-kicker">Biblioteca de prompts</div>
+      <h2 class="sec-title">Escolha seu <span class="hl">objetivo</span></h2>
+      <p class="sec-sub">Primeiro cresça a conta com vídeos virais. Depois monetize com os prompts de TikTok Shop.</p>
+    </div>
+
+    <div class="cat-tabs">
+      <button class="cat-tab active" onclick="switchTab('viral')">🎬 Vídeos Virais</button>
+      <button class="cat-tab" onclick="switchTab('shop')">🛍️ TikTok Shop</button>
+    </div>
+
+    <!-- ===== VIRAL VIDEOS ===== -->
+    <div class="cat-section active" id="tab-viral">
+
+      <div class="include-note" style="margin-bottom:20px">
+        <span class="in-icon">💡</span>
+        <div class="in-text">
+          <strong>Como usar:</strong> Cole o prompt em Kling, Seedance, Google Flow ou qualquer gerador de vídeo com IA. Substitua a referência de personagem pela sua imagem de referência. Os prompts estão em inglês (melhor compatibilidade com IAs) mas o diálogo permanece em Português Brasileiro.
+        </div>
+      </div>
+
+      <div class="expand-bar">
+        <span class="expand-bar-label">4 categorias</span>
+        <div class="expand-bar-btns">
+          <button class="expand-btn" onclick="expandAll('tab-viral')">Expandir todos ↓</button>
+          <button class="expand-btn" onclick="collapseAll('tab-viral')">Recolher todos ↑</button>
+        </div>
+      </div>
+
+      <!-- GROUP 1: ROÇA / CAMPO -->
+      <div class="prompt-group reveal">
+        <div class="prompt-group-header">
+          <div class="pg-icon pg-amber">🌾</div>
+          <div class="pg-info">
+            <h3>Vídeos de Roça / Campo</h3>
+            <p>Personagens rurais autênticos com diálogos secos e humor genuíno. Alta performance em conteúdo orgânico.</p>
+          </div>
+          <span class="pg-count">10 prompts</span>
+          <button class="pg-toggle">&#8964;</button>
+        </div>
+        <div class="pg-body"><div class="pg-body-inner"><div class="prompt-grid">
+
+          <!-- ROÇA 01 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">ROÇA #01</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Colheita do Tomate — Tomate Vermelho</div>
+              <div class="pc-text">Handheld smartphone-style candid shot in a rural vegetable garden in front of a barn, with the character from the reference image wearing the same straw hat and holding the same tomato-harvesting posture; the man stays anchored in the same body position at the same side of the tomato plants, gently reaching into the leaves and carefully lifting one very red ripe tomato from the plant while keeping the rest of the basket/harvest area unchanged, then giving it a subtle turn in his hands as he looks at it with deadpan dryness; his expression stays dry and sarcastic, with small head tilts, relaxed breathing, and slight thumb-and-finger micro-movements as he finishes showing the tomato. The character speaks the line "Esse tomate tá tão vermelho que, juro, parece que ele me chamou pra cozinhar! Colhi agora, porque quem espera, perde o sabor." with natural mouth and jaw movement matching the spoken line. No cuts, no camera movement beyond natural tremor, stable lighting, static background with the barn and garden consistent; keep exact clothing, hat, and items from the reference image throughout. This entire clip is ONE continuous uninterrupted shot with consistent clothing, accessories, body position and environment from first to last frame.</div>
+              <span class="pc-tag pt-roça">🌾 Roça</span>
+            </div>
+          </div>
+
+          <!-- ROÇA 02 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">ROÇA #02</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Horta da Manhã — Alface Orgânica</div>
+              <div class="pc-text">Handheld smartphone-style candid shot in a rural vegetable garden at early morning, golden light, with the character from the reference image crouching slightly beside rows of lettuce, both hands resting on knees looking at the plants with a deadpan expression; the character slowly tilts their head left, raises one eyebrow, and gently picks one lettuce leaf, holding it up toward the camera with a flat, dry expression as if presenting the most important thing in the world. The character speaks the line "Essa alface aqui acordou antes de mim. Orgânica, fresca, sem agrotóxico e sem drama — diferente de muita gente que eu conheço." with natural mouth and jaw movement, relaxed breathing, subtle micro-expressions. No cuts, no camera jumps, stable warm natural light, static barn background. ONE continuous uninterrupted shot, consistent clothing and accessories from first to last frame.</div>
+              <span class="pc-tag pt-roça">🌾 Roça</span>
+            </div>
+          </div>
+
+          <!-- ROÇA 03 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">ROÇA #03</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Negociação com o Galo</div>
+              <div class="pc-text">Handheld smartphone-style candid vertical video in a rural backyard with packed dirt ground and leafy trees in the background, natural daylight with consistent lighting; the character from the reference image stays completely anchored in the same spot on the dirt, body facing the direction of a real rooster running nearby in the yard, eyes fixed on it with an exaggerated startled-but-trying-to-stay-calm expression while keeping still; the character's hands remain in the same position throughout, with only small finger and wrist micro-movements and subtle head tilts as the rooster circles and approaches at a short distance; the man speaks with natural mouth and jaw movement, saying: "Eita, rapaz, esse galo tá confudindo meu sossego! Ele não corre atrás de mim, corre atrás do próprio orgulho, viu? Hoje ele perde." The comedic beat lands as the character continues the negotiation in a serious tone while the rooster keeps moving around nearby. This entire clip is one continuous uninterrupted shot with consistent clothing, accessories, body position, and environment from first to last frame.</div>
+              <span class="pc-tag pt-roça">🌾 Roça</span>
+            </div>
+          </div>
+
+          <!-- ROÇA 04 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">ROÇA #04</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Galinhas e Etiqueta Secreta</div>
+              <div class="pc-text">Handheld smartphone-style close-to-medium shot in a rustic sítio barnyard, consistent warm daylight and a steady background with the same barn area and chicken yard, the character from the reference image stays anchored in the same spot beside the chickens while holding a feed container and continuously stirring the chicken food with one hand, using small, natural wrist circles and gentle scoops as the chickens peck nearby without any sudden motion; the character leans slightly forward, tilts their head as if listening to a secret, then smirks and raises their eyebrows toward the flock, saying: "Tem hora que elas falam no olhar, viu? Quando uma bicadinha começa, todas entendem o recado e sincronizam. Deve existir aula secreta de etiqueta!" Natural mouth and jaw movement, stable lighting. ONE continuous uninterrupted shot, consistent clothing, accessories, body position, and environment from first to last frame.</div>
+              <span class="pc-tag pt-roça">🌾 Roça</span>
+            </div>
+          </div>
+
+          <!-- ROÇA 05 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">ROÇA #05</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Abóbora Filosófica</div>
+              <div class="pc-text">Handheld smartphone-style candid shot in a rural garden, natural afternoon light, the character from the reference image sits on a wooden stool beside a large pumpkin resting on the ground, one hand placed flat on top of it with a solemn expression as if in deep thought; the character stares at the pumpkin for a beat, then slowly looks up at the camera with a flat, dry gaze and speaks: "Essa abóbora cresceu sem pressa, sem reclamação, sem pedir nada de ninguém. Se ela tivesse Instagram, teria mais seguidores do que eu." A long pause. Then the character looks back at the pumpkin with newfound respect. Small micro-movements, natural breathing, no sudden motion. Stable background. ONE continuous uninterrupted shot, consistent clothing, accessories, environment from first to last frame.</div>
+              <span class="pc-tag pt-roça">🌾 Roça</span>
+            </div>
+          </div>
+
+          <!-- ROÇA 06 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">ROÇA #06</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">O Bode Teimoso</div>
+              <div class="pc-text">Handheld smartphone-style vertical video in a rustic pen area with dry dirt and wooden fence posts in the background, natural daylight; the character from the reference image stands firmly with arms loosely crossed, facing slightly sideways toward a goat that keeps butting its head against the fence nearby; the character watches the goat with patient, resigned eyes, then slowly looks at the camera and speaks in deadpan: "Esse bode aqui bate a cabeça no mesmo lugar todo dia esperando um resultado diferente. Chamam isso de teimosia. Na cidade, chamam de resiliência." Subtle exhale through the nose. Eyes return to the goat. Natural micro-movements, relaxed hands. Stable background. ONE continuous uninterrupted shot from first to last frame.</div>
+              <span class="pc-tag pt-roça">🌾 Roça</span>
+            </div>
+          </div>
+
+          <!-- ROÇA 07 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">ROÇA #07</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Milho na Fogueira</div>
+              <div class="pc-text">Handheld smartphone-style candid close-medium shot outdoors near a small fire pit at dusk, warm flickering orange light, the character from the reference image holds a corn cob on a stick over the fire with one hand, using gentle small wrist rotations to turn it evenly; the face catches warm light with a calm, slightly smug expression; the character glances at the camera briefly and speaks without fully turning: "Sabe o que é bom? Milho assado sem aplicativo, sem delivery, sem taxa de entrega. Só o fogo, a espiga e a paciência que a cidade esqueceu." Returns gaze to the corn. Long pause. Soft crackle ambience implied. Stable shot, no cuts, no sudden movement. ONE continuous uninterrupted shot with consistent clothing and environment from first to last frame.</div>
+              <span class="pc-tag pt-roça">🌾 Roça</span>
+            </div>
+          </div>
+
+          <!-- ROÇA 08 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">ROÇA #08</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">A Vaca que Julga</div>
+              <div class="pc-text">Handheld smartphone-style candid vertical video in a rural pasture with a wooden fence and green field in the background, natural daylight; the character from the reference image stands near the fence, leaning slightly on it with one forearm, looking at a calm cow on the other side that stares back with large expressionless eyes; the character holds the cow's gaze for a beat, then speaks directly to camera with complete seriousness: "Ela tá me olhando como se soubesse de alguma coisa que eu não sei. Não sei quem tá julgando quem aqui." A beat. The cow blinks. The character sighs. No cuts, no camera movement beyond natural hand tremor. ONE continuous uninterrupted shot, consistent clothing and environment from first to last frame.</div>
+              <span class="pc-tag pt-roça">🌾 Roça</span>
+            </div>
+          </div>
+
+          <!-- ROÇA 09 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">ROÇA #09</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Chuva e Filosofia Rural</div>
+              <div class="pc-text">Handheld smartphone-style candid vertical video from under the roof of a rustic wooden porch, rain falling visibly in the yard beyond, natural grey-green daylight; the character from the reference image stands at the edge of the porch looking out at the rain with arms lightly folded, body completely still except for subtle chest breathing and occasional small shoulder movements; after a long contemplative pause the character speaks to camera: "Chuva não pede licença, não avisa, não manda mensagem antes. Chega e pronto. É a coisa mais honesta que existe na roça." Then returns gaze to the rain. No cuts. Consistent stable framing. ONE continuous uninterrupted shot with consistent clothing and environment from first to last frame.</div>
+              <span class="pc-tag pt-roça">🌾 Roça</span>
+            </div>
+          </div>
+
+          <!-- ROÇA 10 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">ROÇA #10</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Enxada e Sabedoria</div>
+              <div class="pc-text">Handheld smartphone-style candid vertical video in an open field under bright natural sun, red earth visible, the character from the reference image stands upright holding a hoe with both hands, resting their chin lightly on the handle top, staring off into the distance with a tired-but-wise expression; the character slowly turns the gaze toward camera without lifting the chin, a beat of silence, then speaks: "Cada metro de terra que eu cavo, eu enterro uma preocupação. É mais barato que terapia e a terra ainda agradece." A slow nod. Returns gaze forward. Natural micro-body movements, stable background. ONE continuous uninterrupted shot with consistent clothing, accessories, and environment from first to last frame.</div>
+              <span class="pc-tag pt-roça">🌾 Roça</span>
+            </div>
+          </div>
+
+        </div>
+      </div></div>
+      </div>
+
+      <!-- GROUP 2: PAI & FILHO -->
+      <div class="prompt-group reveal">
+        <div class="prompt-group-header">
+          <div class="pg-icon pg-blue">👨‍👦</div>
+          <div class="pg-info">
+            <h3>Vídeos Virais — Pai & Filho / Família</h3>
+            <p>Conteúdo emocional e cômico com duplas geracionais. Altíssimo engajamento em contas de família e lifestyle.</p>
+          </div>
+          <span class="pg-count">10 prompts</span>
+          <button class="pg-toggle">&#8964;</button>
+        </div>
+        <div class="pg-body"><div class="pg-body-inner"><div class="prompt-grid">
+
+          <!-- FAMILIA 01 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">FAM #01</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Ela que o Pai Falou — CTA Engajamento</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld selfie shot inside a modern Brazilian apartment. The younger man holds the phone while filming himself and his father. Keep the same framing, camera movement, lighting, facial expressions, pauses, smiles, and conversational timing. Dialogue (Brazilian Portuguese): Jovem: "Pai, é ela que você falou?" Pai: "É ela mesmo, filho. Eu sabia." Jovem: "Você não para de sorrir quando fala dela." Pai (olhando diretamente para a câmera): "Aproveita os botões aqui do lado pra aparecer pra mim." Make the conversation feel completely natural and improvised. Authentic Brazilian Portuguese voices with perfect lip sync, subtle room ambience, no background music, no subtitles, and no text on screen. The final line should have warm comedic timing, with the father looking gently at the camera.</div>
+              <span class="pc-tag pt-familia">👨‍👦 Família</span>
+            </div>
+          </div>
+
+          <!-- FAMILIA 02 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">FAM #02</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Avô Descobre Redes Sociais</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld selfie shot inside a cozy Brazilian living room with afternoon light. The grandson holds the phone filming himself and his grandfather sitting together on a sofa. Conversational, warm lighting, natural camera movement. Dialogue (Brazilian Portuguese): Neto: "Vô, você sabe que tem gente que te segue sem te conhecer?" Avô: "Como assim? Me segue pra onde?" Neto: "No TikTok, vô. Você tem fãs." Avô (olhando diretamente para a câmera com um sorriso tímido): "Então me dá um seguir aí, minha gente, pra eu provar pro meu neto que velho também viraliza." Natural improvised feel, authentic Brazilian Portuguese voices, perfect lip sync. No music, no subtitles, no text on screen.</div>
+              <span class="pc-tag pt-familia">👨‍👦 Família</span>
+            </div>
+          </div>
+
+          <!-- FAMILIA 03 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">FAM #03</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Mãe e Filha — Segredo de Família</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld selfie shot in a Brazilian kitchen with natural daylight, the daughter films herself and her mother who stirs something in a pot on the stove. Relaxed, casual lighting. Dialogue (Brazilian Portuguese): Filha: "Mãe, me fala o segredo dessa comida." Mãe: "Não tem segredo, filha." Filha: "Mãe... todo mundo pergunta." Mãe (pausando a colher, virando para a câmera com ar de mistério): "Então deixa um coraçãozinho aqui que eu penso se conto." Long warm smile. The mother turns back to the pot. Natural improvised conversation, authentic Brazilian Portuguese voices, perfect lip sync, kitchen ambience sounds only. No music, no subtitles, no text on screen.</div>
+              <span class="pc-tag pt-familia">👨‍👦 Família</span>
+            </div>
+          </div>
+
+          <!-- FAMILIA 04 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">FAM #04</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Pai Orgulhoso — Conquista do Filho</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld selfie shot in a living room, son filming himself and father standing close together, the father with a hand on the son's shoulder. Warm indoor light. Dialogue (Brazilian Portuguese): Filho: "Pai, você não imagina o que aconteceu." Pai: "O quê foi?" Filho: "Me chamaram pra trabalhar lá." Pai (olhos brilhando, voz quebrada de orgulho): "Eu sabia que você ia chegar lá, filho. Sempre soube." A pause. The father looks at the camera: "Fica aqui comigo pra ver o que ele vai conquistar ainda." Natural, emotional, authentic Brazilian Portuguese. No music, no subtitles.</div>
+              <span class="pc-tag pt-familia">👨‍👦 Família</span>
+            </div>
+          </div>
+
+          <!-- FAMILIA 05 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">FAM #05</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Casal de Idosos — Amor de Décadas</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld shot in a simple Brazilian backyard, filmed by a grandchild, showing an elderly couple sitting side by side on plastic chairs under a mango tree, natural afternoon light. Dialogue (Brazilian Portuguese): Neta: "Vovô, como é que a senhora aguenta ele faz 50 anos?" Avó (rindo): "Ah minha filha, eu não aguento. Eu amo." Avovô (sem piscar, olhando para a câmera): "Segue ela aqui que ela tem mais sabedoria do que aparenta." Long shared laugh. Natural, warm, improvised feel. Authentic Brazilian Portuguese voices, perfect lip sync, outdoor ambience only. No music, no subtitles, no text on screen.</div>
+              <span class="pc-tag pt-familia">👨‍👦 Família</span>
+            </div>
+          </div>
+
+          <!-- FAMILIA 06 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">FAM #06</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Irmãos — A Briga de Sempre</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld selfie shot inside a Brazilian home hallway or bedroom, filmed by the younger sibling pointing camera at both. Casual light, natural feel. Dialogue (Brazilian Portuguese): Irmão mais novo: "Você ainda guarda rancor daquela vez?" Irmão mais velho: "Que vez?" Irmão mais novo: "Você sabe." Irmão mais velho (virando para a câmera com cara de quem sabe tudo): "Vou guardar pra sempre. Mas deixa um like aqui que eu perdoo." A beat. The younger sibling looks at camera in disbelief. Authentic Brazilian Portuguese voices, improvised comedic timing, perfect lip sync. No music, no subtitles, no text on screen.</div>
+              <span class="pc-tag pt-familia">👨‍👦 Família</span>
+            </div>
+          </div>
+
+          <!-- FAMILIA 07 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">FAM #07</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Pai na Cozinha — Tentativa Épica</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld shot filmed by the child from the kitchen door, father at the stove trying to cook, surrounded by slight mess, wearing an apron, looking uncertain but committed. Natural indoor light, casual Brazilian home kitchen. Dialogue (Brazilian Portuguese): Filha (off-camera): "Pai, o que você tá fazendo?" Pai (sem virar): "Cozinhando." Filha: "Pai... tá fumacinha saindo." Pai (virando para a câmera com expressão de quem não vai recuar): "Tá tudo sob controle. Segue aqui pra saber se deu certo." A pause, then the sound of something sizzling too loud. Natural, comedic, improvised. Authentic Brazilian Portuguese, no music, no subtitles.</div>
+              <span class="pc-tag pt-familia">👨‍👦 Família</span>
+            </div>
+          </div>
+
+          <!-- FAMILIA 08 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">FAM #08</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Avó Sábia — Conselho Que Funciona</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld selfie shot in a simple Brazilian bedroom with afternoon light, the grandchild sits beside the grandmother on the bed, grandmother in a house dress, relaxed posture. Dialogue (Brazilian Portuguese): Neto: "Vó, como você faz pra não se estressar com nada?" Avó: "Filho, eu resolvo o que eu posso, e o que eu não posso..." Neto: "...o que não pode?" Avó (sorrindo para a câmera): "Deixa pra Deus, que Ele tem mais paciência do que eu. Me segue aqui que eu tenho mais conselho." Natural, warm, wise delivery. Authentic Brazilian Portuguese voices, perfect lip sync. No music, no subtitles, no text on screen.</div>
+              <span class="pc-tag pt-familia">👨‍👦 Família</span>
+            </div>
+          </div>
+
+          <!-- FAMILIA 09 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">FAM #09</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Pai Tentando Entender TikTok</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld selfie shot in a living room, son films himself and his father who holds the phone awkwardly trying to understand how to navigate TikTok, squinting at the screen with confusion. Casual indoor light. Dialogue (Brazilian Portuguese): Filho: "Pai, você tá curtindo as coisas erradas." Pai: "Como? Eu cliquei no coraçãozinho." Filho: "Você curtiu o perfil da vizinha, pai." Pai (olhando diretamente para a câmera, totalmente sem constrangimento): "Me ajuda aí a encontrar coisas boas pra seguir. Começa por mim." Authentic comedic timing, natural lip sync, improvised delivery. No music, no subtitles, ambient room sounds only.</div>
+              <span class="pc-tag pt-familia">👨‍👦 Família</span>
+            </div>
+          </div>
+
+          <!-- FAMILIA 10 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">FAM #10</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Mãe Viraliza Sem Querer</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld selfie shot in a Brazilian home, the child films themselves and their mother sitting on the couch, mother dressed simply, natural home light. Dialogue (Brazilian Portuguese): Filho: "Mãe, você sabia que você foi parar nos comentários de um video com 2 milhões de views?" Mãe: "Eu? Como assim?" Filho: "Alguém te filmou na rua e falou que você tem cara de rainha." Mãe (olhando para a câmera com calma soberba): "Claro que tem. Me segue aqui pra não perder mais nada." A regal smile. Improvised, natural, authentic Brazilian Portuguese. Perfect lip sync, no music, no subtitles, no text.</div>
+              <span class="pc-tag pt-familia">👨‍👦 Família</span>
+            </div>
+          </div>
+
+        </div>
+      </div></div>
+      </div>
+
+      <!-- GROUP 3: CRIANÇA FOFA -->
+      <div class="prompt-group reveal">
+        <div class="prompt-group-header">
+          <div class="pg-icon pg-pink">👧</div>
+          <div class="pg-info">
+            <h3>Vídeos Virais — Criança / Menina Fofa</h3>
+            <p>Crianças inocentes pedindo engajamento com total naturalidade. Um dos formatos com maior alcance orgânico.</p>
+          </div>
+          <span class="pg-count">10 prompts</span>
+          <button class="pg-toggle">&#8964;</button>
+        </div>
+        <div class="pg-body"><div class="pg-body-inner"><div class="prompt-grid">
+
+          <!-- CRIANÇA 01 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">KIDS #01</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Coraçãozinho da Vovó — Pedido Inocente</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld smartphone video inside a rustic wooden house with natural daylight coming through the doorway. A cute little Black Brazilian girl, about 2–3 years old, stands barefoot wearing a red-and-white striped dress. Keep natural framing, light, smiles, head tilts, body swaying, and timing. She speaks in a sweet, innocent voice: "Vovó, será que o meu sorriso merece um coraçãozinho seu? Clica no mais vermelho da minha foto para eu saber." During "meu sorriso", she gives a bigger smile. At "mais vermelho da minha foto", she points with her finger toward the side of the screen, then looks back at the camera and smiles. Natural Brazilian Portuguese child speech, perfect lip sync. No music, no subtitles, no text on screen, only soft ambient house sounds.</div>
+              <span class="pc-tag pt-crianca">👧 Criança</span>
+            </div>
+          </div>
+
+          <!-- CRIANÇA 02 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">KIDS #02</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Estrelinha da Mamãe — Pede Seguidor</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld smartphone video in a bright Brazilian living room with afternoon light. A cute little Brazilian girl, about 3–4 years old, stands in a yellow dress with pigtails, swaying slightly side to side. She speaks clearly and sweetly with natural child pronunciation: "Você ia gostar de ser meu amigo? Então aperta aquele botão de seguir pra eu saber que você tá aqui comigo." She points at the camera during "seguir", then opens a big smile and gives a small wave. Sweet, innocent delivery, natural child movement. No music, no subtitles, ambient home sounds only.</div>
+              <span class="pc-tag pt-crianca">👧 Criança</span>
+            </div>
+          </div>
+
+          <!-- CRIANÇA 03 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">KIDS #03</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Meu Sorriso Vale um Like</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld smartphone video in a cozy Brazilian bedroom with soft natural light from a window. A cute little mixed-race Brazilian girl, about 4–5 years old, sits on a small bed hugging a stuffed animal, wearing pajamas with a little flower print. She looks at the camera with big eyes and speaks with complete innocence: "Minha mamãe disse que o meu sorriso é o mais bonito do mundo. Será que você concorda? Me dá um like pra eu contar pra ela." During "sorriso" she breaks into a huge smile. Natural child speech, authentic lip sync. Only soft ambient room sounds. No music, no subtitles.</div>
+              <span class="pc-tag pt-crianca">👧 Criança</span>
+            </div>
+          </div>
+
+          <!-- CRIANÇA 04 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">KIDS #04</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Convite da Festa — Segue pra Saber</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld smartphone video in a simple Brazilian home with natural daylight. A cheerful little Brazilian boy, about 4–5 years old, stands in a colorful t-shirt shifting his weight between feet with excitement. He speaks directly to the camera with big eyes and a gap-toothed smile: "Eu tô fazendo uma festa e eu quero te convidar. Mas só pode ir quem me segue, tá? Aperta ali pra receber o convite!" He gestures toward the side of the screen with one finger at "aperta ali", then claps his hands together with excitement. Authentic child speech, natural Brazilian Portuguese, perfect lip sync. No music, no subtitles, ambient sounds only.</div>
+              <span class="pc-tag pt-crianca">👧 Criança</span>
+            </div>
+          </div>
+
+          <!-- CRIANÇA 05 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">KIDS #05</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Dança da Sapatilha — Coraçãozinho</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld smartphone video in a small dance studio or living room with wooden floor and soft daylight. A sweet little Black Brazilian girl, about 5–6 years old, wears a ballet dress and white slippers, standing with toes turned slightly outward. She sways gently and speaks with charm and innocence: "Eu treino todo dia pra dançar bonito pra você. Se você acha que eu mereço, me dá um coraçãozinho bem vermelho ali na foto." She taps her chest gently at "coraçãozinho", then does a small twirl and smiles at the camera. Natural child speech, Brazilian Portuguese, perfect lip sync. No music, no subtitles, soft ambient sounds.</div>
+              <span class="pc-tag pt-crianca">👧 Criança</span>
+            </div>
+          </div>
+
+          <!-- CRIANÇA 06 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">KIDS #06</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Pergunta da Hora — Segue se Concordar</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld smartphone video in a Brazilian backyard with green grass, natural bright daylight. A playful little mixed Brazilian girl, about 5–6 years old, stands with hands on hips in a purple dress and sandals, head slightly tilted with an expression of pure curiosity. She speaks directly to camera: "Você já acordou com vontade de comer um docinho mas a mamãe disse não?" A pause, big conspiratorial smile. "Então me segue porque eu sei tudo sobre isso." She gives a knowing nod. Natural child speech, authentic Brazilian Portuguese, perfect lip sync. Outdoor ambient sounds only. No music, no subtitles.</div>
+              <span class="pc-tag pt-crianca">👧 Criança</span>
+            </div>
+          </div>
+
+          <!-- CRIANÇA 07 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">KIDS #07</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Melhor Amigo — Me Segue Que Te Sigo</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld smartphone video inside a simple Brazilian home hallway with afternoon light. A sweet little boy, about 3–4 years old, stands in shorts and a striped shirt, slightly shy but smiling, one hand clasping the other in front of him. He speaks with a small lisp and sweet pronunciation: "Eu não conheço você mas eu já gosto de você. Quer ser meu amigo? Me segue ali que eu te sigo de volta, prometo." At "prometo", he extends one pinky finger toward the camera. Natural, innocent, authentic Brazilian child speech, perfect lip sync. Only soft ambient house sounds. No music, no subtitles.</div>
+              <span class="pc-tag pt-crianca">👧 Criança</span>
+            </div>
+          </div>
+
+          <!-- CRIANÇA 08 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">KIDS #08</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Lição da Escolinha — Tarefa Especial</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld smartphone video at a small child's desk with crayons visible, natural daylight through a window. A cute little Black Brazilian girl, about 5–6 years old, sits at the desk holding a crayon, wearing a school uniform, looking seriously at the camera with a very important expression. She speaks: "A professora mandou uma tarefa especial hoje. Ela disse que eu tenho que juntar dez curtidas nesse vídeo. Você me ajuda?" She places both hands together with a pleading look and big eyes. At "curtidas" she points toward the screen. Natural child speech, authentic Brazilian Portuguese, perfect lip sync. Ambient sounds only. No music, no subtitles.</div>
+              <span class="pc-tag pt-crianca">👧 Criança</span>
+            </div>
+          </div>
+
+          <!-- CRIANÇA 09 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">KIDS #09</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Aniversário Chegando — Seguidor de Presente</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld smartphone video in a simple decorated Brazilian home, colorful balloons visible in the background, natural indoor light. A cheerful little mixed Brazilian girl, about 4–5 years old, stands in a party dress with a little crown on her head, bouncing slightly with excitement. She speaks: "Meu aniversário tá chegando e eu só tenho um pedido. Você me dá um seguir de presente? É de graça e me deixa muito feliz." She brings her hands together in a prayer gesture at "por favor", eyes wide and smiling. Natural child speech, authentic Brazilian Portuguese. No music, no subtitles, ambient sounds only.</div>
+              <span class="pc-tag pt-crianca">👧 Criança</span>
+            </div>
+          </div>
+
+          <!-- CRIANÇA 10 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">KIDS #10</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Segredo do Sorriso — Coraçãozinho Escondido</div>
+              <div class="pc-text">Vertical 9:16, single continuous handheld smartphone video inside a rustic wooden house with soft natural light. A sweet little Black Brazilian girl, about 3–4 years old, stands barefoot in a floral dress, slightly swaying. She covers her mouth with both hands as if hiding a smile, then slowly lowers them to reveal the biggest smile. She speaks: "Sabia que tem um coraçãozinho escondido aqui no vídeo esperando você clicar? Vai lá, acha ele e me manda um sorriso de volta." She points toward the screen and looks back expectantly. Natural sweet child speech, Brazilian Portuguese, perfect lip sync. No music, no subtitles, soft ambient sounds only.</div>
+              <span class="pc-tag pt-crianca">👧 Criança</span>
+            </div>
+          </div>
+
+        </div>
+      </div></div>
+      </div>
+
+      <!-- GROUP 4: MULHER DA ROÇA -->
+      <div class="prompt-group reveal">
+        <div class="prompt-group-header">
+          <div class="pg-icon pg-purple">👩</div>
+          <div class="pg-info">
+            <h3>Vídeos Virais — Mulher Simples / Roça</h3>
+            <p>Mulher autêntica do interior, confiante e desafiadora. Enorme engajamento especialmente com público masculino.</p>
+          </div>
+          <span class="pg-count">10 prompts</span>
+          <button class="pg-toggle">&#8964;</button>
+        </div>
+        <div class="pg-body"><div class="pg-body-inner"><div class="prompt-grid">
+
+          <!-- MULHER 01 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">MUL #01</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Mulher da Roça — Desafio Real</div>
+              <div class="pc-text">Vertical 9:16, single continuous smartphone selfie video recorded outdoors in a rural Brazilian property during the day. A simple Brazilian woman from the countryside stands facing the camera, with trees, dirt ground, and a rustic house in the background. Natural lighting, no filter. She speaks naturally with a countryside Brazilian accent: "Quando você vê uma moça fazendo dancinha, você fica curtindo, né? Agora quero ver quem é homem de verdade pra seguir uma mulher simples e da roça que nem eu." First sentence teasing, second sentence confident and challenging. On "mulher simples e da roça que nem eu", she gives a subtle proud smile while maintaining eye contact. Native Brazilian Portuguese lip sync. No music, no subtitles, outdoor ambience only.</div>
+              <span class="pc-tag pt-mulher">👩 Mulher</span>
+            </div>
+          </div>
+
+          <!-- MULHER 02 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">MUL #02</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Sem Filtro — Só Autenticidade</div>
+              <div class="pc-text">Vertical 9:16, single continuous smartphone selfie video recorded outdoors near a simple rural home, natural afternoon light. A confident Brazilian woman from the countryside, mid-twenties, stands looking directly at the camera with no makeup and casual hair, arms at her side. She speaks in a clear, direct countryside accent: "Todo mundo posta foto editada, filtrada, com luz profissional. Eu não. O que você vê é o que é. Se você prefere real ao invés de perfeito, me segue aqui." She holds steady eye contact, a brief pause before the final phrase, then gives a simple honest smile. No exaggerated expressions. Native Brazilian Portuguese, perfect lip sync. No music, no subtitles, natural outdoor sounds only.</div>
+              <span class="pc-tag pt-mulher">👩 Mulher</span>
+            </div>
+          </div>
+
+          <!-- MULHER 03 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">MUL #03</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Trabalho Antes do Sol — Orgulho Real</div>
+              <div class="pc-text">Vertical 9:16, single continuous smartphone selfie video outdoors on a rural property, early morning golden light, woman standing near the vegetable garden with visible garden tools and plants behind her, slight wind moving her hair. She speaks with quiet but firm pride: "Eu já trabalhei hoje antes do sol nascer. Enquanto muita gente ainda tava dormindo, eu já tava aqui. Se você respeita quem não tem preguiça, me segue que a gente tem muito em comum." She holds her gaze at the camera throughout, not looking away. Simple, honest, no performance. Native countryside Brazilian accent, perfect lip sync. No music, no subtitles, only natural morning ambient sounds.</div>
+              <span class="pc-tag pt-mulher">👩 Mulher</span>
+            </div>
+          </div>
+
+          <!-- MULHER 04 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">MUL #04</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Dona de Casa Com Orgulho</div>
+              <div class="pc-text">Vertical 9:16, single continuous smartphone selfie video inside a simple but clean Brazilian home kitchen, natural daylight, woman standing at the counter with a dish towel over her shoulder. She looks directly at the camera and speaks with warmth and pride: "Eu cuido da minha casa, cuido da minha família, trabalho fora e ainda faço o jantar. E não, eu não precisei de validação de ninguém pra isso. Se você é assim também, chega aqui e me segue." A calm, proud smile at the end. No defensiveness, just confidence. Native Brazilian Portuguese, countryside warmth in the voice. Perfect lip sync. No music, no subtitles, soft kitchen ambient sounds.</div>
+              <span class="pc-tag pt-mulher">👩 Mulher</span>
+            </div>
+          </div>
+
+          <!-- MULHER 05 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">MUL #05</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Não Me Subestime — Desafio Sorridente</div>
+              <div class="pc-text">Vertical 9:16, single continuous smartphone selfie video outdoors in a rural backyard, late afternoon warm light, woman standing with one hand on her hip looking at the camera with a calm, knowing smile. She speaks: "Você olha pra mim e pensa que sabe tudo sobre mim. Não sabe nada, não. Eu surpreendo até quem me conhece há anos. Se você tem curiosidade de me conhecer de verdade, me segue aqui." The smile grows slightly more confident on the final phrase. Teasing tone throughout, never aggressive. Native countryside Brazilian accent, perfect lip sync. No music, no subtitles, outdoor ambient sounds only.</div>
+              <span class="pc-tag pt-mulher">👩 Mulher</span>
+            </div>
+          </div>
+
+          <!-- MULHER 06 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">MUL #06</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Cozinha Melhor do Que Restaurante</div>
+              <div class="pc-text">Vertical 9:16, single continuous smartphone selfie video inside a simple Brazilian rural kitchen, noon light, woman stirring a large pot with one hand, phone in the other. She speaks while continuing to stir, not fully facing the camera at first, then turning: "Restaurante cinco estrelas nunca fez o que eu faço aqui todo dia, não. Sem cardápio, sem chef graduado. Só amor, ingrediente fresco e uma pitada de quem sabe o que tá fazendo." She lifts the spoon to show the food and gives a satisfied look at the camera. Warm, proud delivery. Native Brazilian accent, perfect lip sync. No music, no subtitles, kitchen ambient sounds.</div>
+              <span class="pc-tag pt-mulher">👩 Mulher</span>
+            </div>
+          </div>
+
+          <!-- MULHER 07 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">MUL #07</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Interior Não É Atraso — É Vantagem</div>
+              <div class="pc-text">Vertical 9:16, single continuous smartphone selfie video outdoors on a rural dirt road with green trees and sky behind her, mid-morning natural light. Woman looks at camera steadily, a hint of amusement in her eyes. She speaks: "Tem gente que olha pro interior e vê atraso. Eu olho e vejo o ar mais limpo, a comida mais gostosa, o silêncio mais honesto e o povo mais real que existe. Pode curtir se você entende o que eu tô dizendo." She tilts her chin up slightly on the final phrase with quiet confidence. Native countryside accent, perfect lip sync. No music, no subtitles, natural ambient sounds.</div>
+              <span class="pc-tag pt-mulher">👩 Mulher</span>
+            </div>
+          </div>
+
+          <!-- MULHER 08 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">MUL #08</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Mulher que Não Pede Permissão</div>
+              <div class="pc-text">Vertical 9:16, single continuous smartphone selfie video outdoors near a rustic wooden fence with open field behind her, soft afternoon light. Woman stands with arms loosely at her sides, natural posture, looking directly into camera with calm certainty. She speaks: "Eu não peço permissão pra ser quem eu sou. Não peço aprovação. Não peço desculpa por ocupar espaço. Quem gosta de mulher que se respeita, sabe o que fazer ali embaixo." She glances very briefly at the bottom of the screen, then back to the camera with a composed smile. No attitude, just self-assurance. Native Brazilian accent, perfect lip sync. No music, no subtitles.</div>
+              <span class="pc-tag pt-mulher">👩 Mulher</span>
+            </div>
+          </div>
+
+          <!-- MULHER 09 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">MUL #09</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Amor Próprio da Roça</div>
+              <div class="pc-text">Vertical 9:16, single continuous smartphone selfie video outdoors in a simple rural backyard, late afternoon golden light, woman leaning gently on a wooden post of a small shed, relaxed body language, light natural breeze in her hair. She speaks with slow deliberate warmth: "Eu aprendi aqui na roça que amor próprio não é aquilo que você compra. É o que você cultiva todo dia, como uma planta. Vai devagar, mas quando vira, nunca mais para de crescer." She looks briefly at the ground with a thoughtful expression, then back at the camera with a slow smile. Poetic but grounded delivery. Native countryside Brazilian accent, perfect lip sync. No music, no subtitles.</div>
+              <span class="pc-tag pt-mulher">👩 Mulher</span>
+            </div>
+          </div>
+
+          <!-- MULHER 10 -->
+          <div class="prompt-card">
+            <div class="pc-header">
+              <span class="pc-num">MUL #10</span>
+              <button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button>
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Ela Não Precisa de Trend</div>
+              <div class="pc-text">Vertical 9:16, single continuous smartphone selfie video outdoors near a mango tree in a Brazilian rural property, natural bright daylight. Woman leans against the trunk with casual ease, arms lightly folded, looking at camera with quiet amusement. She speaks: "Eu não faço trend. Eu não copio dancinha. Eu não preciso de viral pra me sentir relevante. Mas se você tá aqui assistindo é porque tem alguma coisa em mim que te prendeu. Então fica, me segue, e descobre o quê é." She holds eye contact throughout with subtle, confident energy. Native countryside accent, perfect lip sync. No music, no subtitles, outdoor natural sounds.</div>
+              <span class="pc-tag pt-mulher">👩 Mulher</span>
+            </div>
+          </div>
+
+        </div>
+      </div></div>
+      </div>
+
+    </div>
+    <!-- END VIRAL TAB -->
+
+    <!-- ===== TIKTOK SHOP TAB ===== -->
+    <div class="cat-section" id="tab-shop">
+
+      <div class="include-note" style="margin-bottom:20px">
+        <span class="in-icon">🛍️</span>
+        <div class="in-text">
+          <strong>Instrução:</strong> Substitua <strong>[PRODUTO]</strong> pelo nome do produto que você está anunciando. Esses prompts foram criados para serem universais — funcionam para cosméticos, eletrônicos, moda, casa, pet, alimentos e qualquer outra categoria do TikTok Shop.
+        </div>
+      </div>
+
+      <div class="expand-bar">
+        <span class="expand-bar-label">7 categorias</span>
+        <div class="expand-bar-btns">
+          <button class="expand-btn" onclick="expandAll('tab-shop')">Expandir todos ↓</button>
+          <button class="expand-btn" onclick="collapseAll('tab-shop')">Recolher todos ↑</button>
+        </div>
+      </div>
+
+      <!-- GROUP 1: POV -->
+      <div class="prompt-group reveal">
+        <div class="prompt-group-header">
+          <div class="pg-icon pg-teal">👁️</div>
+          <div class="pg-info">
+            <h3>POV — Primeira Pessoa</h3>
+            <p>Câmera como olhos do usuário. Máxima imersão e sensação de experiência real com o produto.</p>
+          </div>
+          <span class="pg-count">10 prompts</span>
+          <button class="pg-toggle">&#8964;</button>
+        </div>
+        <div class="pg-body"><div class="pg-body-inner"><div class="prompt-grid">
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">POV #01</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Primeira Experiência — Nunca Pensei</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop POV video recorded on an iPhone 16 Pro. Everything is filmed from the person's own perspective, as if the viewer is using the product. Natural handheld movement, authentic home lighting, real-life environment — kitchen counter or bathroom shelf visible in background. The person interacts naturally with [PRODUTO], showing each step without looking at the camera. They speak in Brazilian Portuguese: "Nunca pensei que um [PRODUTO] fosse facilitar tanto meu dia. Olha isso aqui..." and continues demonstrating specific features while commenting naturally. Authentic reactions, small pauses, no scripted feel. No music. No subtitles. No text. Real ambient sounds only.</div>
+              <span class="pc-tag pt-pov">👁️ POV</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">POV #02</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Teste em Tempo Real — Funcionou!</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop POV video recorded on an iPhone 16 Pro. First-person perspective showing hands interacting with [PRODUTO] on a table or flat surface, natural daylight from a nearby window. The person speaks while testing the product: "Tá, deixa eu testar aqui na frente de vocês. Sem edição, sem truque — se funcionar, vai aparecer aqui..." They demonstrate the product step by step, reacting genuinely to each result. Voice has the natural excitement of a real person discovering something. Brazilian Portuguese, perfect lip sync, ambient room sounds. No music, no subtitles, no text on screen.</div>
+              <span class="pc-tag pt-pov">👁️ POV</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">POV #03</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Rotina da Manhã — Já Não Vivo Sem</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop POV video recorded on an iPhone 16 Pro. First-person morning routine perspective. Bathroom or bedroom setting, soft natural morning light. The viewer sees through the creator's eyes as they use [PRODUTO] as part of their daily routine. They speak casually: "Bom dia. Antes de qualquer coisa, esse aqui — [PRODUTO]. Já faz três semanas que é a primeira coisa que eu uso e eu honestamente não sei como eu vivia sem." Natural morning voice, slightly slower and more relaxed. Continue using the product while talking. No music, no subtitles, only ambient morning sounds.</div>
+              <span class="pc-tag pt-pov">👁️ POV</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">POV #04</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">POV: Você Acabou de Receber Minha Indicação</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop POV video recorded on an iPhone 16 Pro. The video is framed as if the viewer IS the friend receiving a recommendation. The creator holds [PRODUTO] close to the camera talking directly and personally: "Eu não te indicaria isso se não tivesse certeza. Pode confiar em mim — [PRODUTO] fez diferença aqui em casa. Olha só o que ele faz..." Then demonstrates clearly and confidently. Conversational and warm tone throughout. Brazilian Portuguese, perfect lip sync, authentic home environment visible. No music, no text, ambient sounds only.</div>
+              <span class="pc-tag pt-pov">👁️ POV</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">POV #05</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Antes e Depois — Lado a Lado POV</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop POV video recorded on an iPhone 16 Pro. First-person perspective showing a before-and-after demonstration of [PRODUTO]. The camera hovers over the area where the product is being used. Creator speaks: "Olha como tava antes — [describes the before state]. Agora olha o depois com o [PRODUTO]..." Shows the transformation close-up. Genuine reaction to the result: a quiet satisfied sound or "olha que diferença". No exaggeration, just authentic observation. Brazilian Portuguese, natural pacing. No music, no subtitles, ambient sounds only.</div>
+              <span class="pc-tag pt-pov">👁️ POV</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">POV #06</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Problema Resolvido — Achei a Solução</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop POV video recorded on an iPhone 16 Pro. First-person perspective, casual environment. The creator frames the video as solving a specific problem they had. Speaks directly: "Eu ficava com esse problema todo dia — [names a common relatable problem the product solves]. Até que eu encontrei esse [PRODUTO] e olha..." Demonstrates the solution naturally and directly. Tone is calm and matter-of-fact, not over-excited. Brazilian Portuguese, authentic pacing, real ambient sounds. No music, no subtitles, no text on screen.</div>
+              <span class="pc-tag pt-pov">👁️ POV</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">POV #07</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">POV Compra Rápida — Chegou Hoje</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop POV video recorded on an iPhone 16 Pro. First-person perspective showing the moment of receiving and immediately testing [PRODUTO]. The camera shows hands opening packaging on a table, taking the product out, and testing it on the spot. Creator speaks with genuine excitement but controlled: "Chegou hoje. Eu fui direto testar porque não aguentei esperar. Então — primeiro contato com o [PRODUTO]..." and describes sensations or results in real time. Authentic opening sounds, natural reactions. Brazilian Portuguese, no filter feel. No music, no subtitles, package sounds and ambient audio.</div>
+              <span class="pc-tag pt-pov">👁️ POV</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">POV #08</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Uso Silencioso — Sem Palavras Needed</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop POV video recorded on an iPhone 16 Pro. Mostly silent first-person demonstration of [PRODUTO]. The video shows hands using the product clearly and methodically with only ambient sounds. Minimal narration, just one opening line in Brazilian Portuguese: "Esse [PRODUTO] não precisa de muita explicação. Só assiste." Then the rest of the video is pure silent demonstration with close-up detail shots from the POV perspective. The product speaks for itself. Authentic lighting, real home environment. No music, no subtitles, no voiceover beyond the opening line.</div>
+              <span class="pc-tag pt-pov">👁️ POV</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">POV #09</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Noite de Cuidados — Rotina POV</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop POV video recorded on an iPhone 16 Pro. First-person nighttime routine. Soft warm artificial lighting, bathroom or bedroom setting. The creator incorporates [PRODUTO] into their evening routine and speaks quietly: "Minha rotina da noite. Esse [PRODUTO] entrou aqui há um mês e ficou. Não tem como tirar mais." Shows each step of use naturally, with calm pacing matching a nighttime tone. Voice is softer, relaxed. Brazilian Portuguese, authentic pacing. No music, no subtitles, only soft ambient sounds.</div>
+              <span class="pc-tag pt-pov">👁️ POV</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">POV #10</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Compartilhando com Amiga — POV Presente</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop POV video recorded on an iPhone 16 Pro. First-person perspective framed as showing a friend the product. The camera perspective acts as the "friend being shown". Creator holds [PRODUTO] toward the camera: "Deixa eu te mostrar o que eu comprei. Você vai entender por que eu fiquei tão empolgada." Demonstrates naturally with friend-to-friend energy — warm, casual, without any sales language. Brazilian Portuguese with genuine enthusiasm. Natural hand movements, product close-ups. Ambient sounds, no music, no subtitles.</div>
+              <span class="pc-tag pt-pov">👁️ POV</span>
+            </div>
+          </div>
+
+        </div>
+      </div></div>
+      </div>
+
+      <!-- GROUP 2: ESPELHO -->
+      <div class="prompt-group reveal">
+        <div class="prompt-group-header">
+          <div class="pg-icon pg-purple">🪞</div>
+          <div class="pg-info">
+            <h3>Gravado no Espelho</h3>
+            <p>O criador se filma pelo espelho — passa autenticidade máxima. Muito utilizado para moda, beleza e estilo de vida.</p>
+          </div>
+          <span class="pg-count">10 prompts</span>
+          <button class="pg-toggle">&#8964;</button>
+        </div>
+        <div class="pg-body"><div class="pg-body-inner"><div class="prompt-grid">
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">ESP #01</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Preciso Mostrar Isso — Descoberta</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop mirror video. A Brazilian creator records themselves in a bedroom mirror using an iPhone 16 Pro. Natural posture, casual outfit, soft daylight from a nearby window, slight handheld movement. The creator looks at the mirror instead of directly into the camera. They speak: "Gente... preciso mostrar esse [PRODUTO] porque eu tô usando há alguns dias e olha isso." They naturally demonstrate the product while talking, showing results or features in the mirror. Conversational, not scripted. No music. No captions. No text on screen. Brazilian Portuguese with natural lip sync.</div>
+              <span class="pc-tag pt-espelho">🪞 Espelho</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">ESP #02</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Prova ao Vivo — Espelho Não Mente</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop mirror video. Brazilian creator in a bathroom with clean counter visible, filming in the mirror with an iPhone 16 Pro. Casual look, natural makeup or none. The creator speaks to the mirror version of themselves: "Espelho não mente, né? Então olha o que esse [PRODUTO] faz ao vivo, sem filtro." Demonstrates the product directly in the mirror, showing visible results. Candid reactions, natural speech pace. Brazilian Portuguese, perfect lip sync. No music, no subtitles, only soft bathroom ambience sounds.</div>
+              <span class="pc-tag pt-espelho">🪞 Espelho</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">ESP #03</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Antes de Sair de Casa — Toque Final</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop mirror video. Brazilian creator dressed to go out, filming themselves in a full-length or half-length bedroom mirror, iPhone visible in their hand. Natural outfit check energy — turning slightly, adjusting. They speak casually: "Antes de sair, esse é meu toque final — [PRODUTO]. Você vai entender quando ver." Applies or uses the product naturally while checking themselves in the mirror. Brief but confident. Brazilian Portuguese, natural pacing. No music, no text, no subtitles. Only natural room ambient sounds.</div>
+              <span class="pc-tag pt-espelho">🪞 Espelho</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">ESP #04</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Transformação Espelho — Resultado Visível</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop mirror video. Brazilian creator in a bedroom or bathroom mirror, natural morning light. The video begins with the creator looking at themselves normally, then they apply or use [PRODUTO] and the video shows the visible change or result in the mirror. Creator narrates: "Deixa eu mostrar... antes [describes state]. Agora com o [PRODUTO] — você consegue ver a diferença no espelho, olha." Points toward the mirror. Calm, observational delivery — not over-excited. Brazilian Portuguese, authentic. No music, no subtitles, ambient sounds only.</div>
+              <span class="pc-tag pt-espelho">🪞 Espelho</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">ESP #05</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Testando na Frente do Espelho</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop mirror video. Brazilian creator filming in a mirror, wearing a simple outfit, indoor daylight. The creator tests [PRODUTO] for the first time in the video: "Nunca tinha testado esse aqui no espelho. Vai que é ao vivo mesmo." Tests the product step by step, commentating naturally what they're seeing or feeling. A mix of narration and honest reactions. Not a rehearsed review — feels genuinely improvised and curious. Brazilian Portuguese, natural lip sync. Slight handheld mirror movement. No music, no subtitles, ambient room sounds only.</div>
+              <span class="pc-tag pt-espelho">🪞 Espelho</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">ESP #06</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Espelho Honesto — Sem Edição</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop mirror video. Brazilian creator filming in a mirror in natural unfiltered light — no beauty lighting, no ring light, just the real overhead or window light. The honesty of the lighting is part of the message. Creator speaks: "Câmera sem filtro, luz sem ajuste, espelho honesto. E o [PRODUTO] aparece igual do mesmo jeito." Demonstrates and shows result with confidence. The raw lighting makes the product's effectiveness more believable. Brazilian Portuguese, authentic delivery. No music, no subtitles, ambient sounds only.</div>
+              <span class="pc-tag pt-espelho">🪞 Espelho</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">ESP #07</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Rotina Completa — Espelho da Manhã</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop mirror video. Brazilian creator filming a segment of their morning routine in the bathroom mirror, showing multiple steps until reaching [PRODUTO]. Creator speaks naturally throughout: "Então entra o [PRODUTO] aqui — esse é o passo que mais faz diferença na minha rotina." Uses the product and shows the result in the mirror. Calm, methodical, real morning-routine pacing. Brazilian Portuguese, natural voice, no rushed delivery. No music, no subtitles, soft bathroom ambient sounds.</div>
+              <span class="pc-tag pt-espelho">🪞 Espelho</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">ESP #08</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Eu Também Duvidei — Mudei de Ideia</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop mirror video. Brazilian creator in a bedroom mirror, casual outfit, natural light. The creator's body language starts slightly skeptical then shifts to convinced. They speak: "Eu também achei que era exagero quando vi. Comprei pra testar e... bom. Tô aqui no espelho tendo que admitir que esse [PRODUTO] funciona de verdade." Demonstrates with a calm "I was wrong and I'm okay with it" energy. Relatable and authentic. Brazilian Portuguese, natural pacing, perfect lip sync. No music, no subtitles, ambient room sounds.</div>
+              <span class="pc-tag pt-espelho">🪞 Espelho</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">ESP #09</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Espelho Depois do Treino</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop mirror video. Brazilian creator filming in a bathroom or locker room mirror after a workout — slightly flushed, casual sportswear, natural post-exercise energy. They reach for [PRODUTO] and speak: "Pós-treino, esse aqui é obrigatório. Onze meses usando e não troco. Olha o resultado." Applies or uses the product while showing the mirror. Confident, practical tone — not a beauty video, more like an athlete's routine. Brazilian Portuguese, natural lip sync. No music, no subtitles, ambient sounds.</div>
+              <span class="pc-tag pt-espelho">🪞 Espelho</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">ESP #10</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Para Quem Ainda Não Descobriu</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop mirror video. Brazilian creator in a mirror, relaxed posture, natural light. They hold [PRODUTO] up toward the mirror and speak with a knowing, slightly conspiratorial smile: "Isso aqui é para quem ainda não descobriu. Se você passa aqui todo dia e nunca viu — fica de olho. Esse [PRODUTO] vai aparecer no seu For You de outro jeito em breve." Then demonstrates naturally. The tone suggests insider knowledge without being pushy. Brazilian Portuguese, natural lip sync, authentic delivery. No music, no subtitles, ambient room sounds.</div>
+              <span class="pc-tag pt-espelho">🪞 Espelho</span>
+            </div>
+          </div>
+
+        </div>
+      </div></div>
+      </div>
+
+      <!-- GROUP 3: SELFIE INFLUENCER -->
+      <div class="prompt-group reveal">
+        <div class="prompt-group-header">
+          <div class="pg-icon pg-pink">📱</div>
+          <div class="pg-info">
+            <h3>Selfie / Influencer Falando com a Câmera</h3>
+            <p>O clássico formato de recomendação direta. Conversacional, direto e que mais converte no TikTok Shop.</p>
+          </div>
+          <span class="pg-count">10 prompts</span>
+          <button class="pg-toggle">&#8964;</button>
+        </div>
+        <div class="pg-body"><div class="pg-body-inner"><div class="prompt-grid">
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">SEL #01</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Achei Que Era Propaganda — Até Testar</div>
+              <div class="pc-text">Create an ultra-realistic handheld selfie video for TikTok Shop. Brazilian creator holding the phone with the front camera, casual home setting, natural facial expressions and spontaneous conversation. They speak: "Eu achei que isso aqui era propaganda... até testar esse [PRODUTO]." Then keeps talking while showing the product close to the camera. Natural pauses, genuine reactions, no over-acting. Brazilian Portuguese, authentic lip sync. No music. No subtitles. Ambient room sound only.</div>
+              <span class="pc-tag pt-selfie">📱 Selfie</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">SEL #02</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Para — Vai Lá Comprar</div>
+              <div class="pc-text">Create an ultra-realistic handheld selfie video for TikTok Shop. Brazilian creator holds phone in selfie mode, casual home or outdoor environment, natural light. They speak in a direct, no-nonsense tone: "Para tudo. Se você ainda não comprou esse [PRODUTO], você tá atrasando. Eu vou te explicar porque em trinta segundos." Then gives 3 clear reasons while showing the product. Confident and assertive but not pushy — feels like a friend who found a great deal. Brazilian Portuguese, natural pacing. No music, no subtitles, ambient sounds only.</div>
+              <span class="pc-tag pt-selfie">📱 Selfie</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">SEL #03</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Meu Vício Novo — Confissão</div>
+              <div class="pc-text">Create an ultra-realistic handheld selfie video for TikTok Shop. Brazilian creator sitting or standing comfortably at home, natural indoor lighting, selfie mode. They lean slightly toward the camera and speak in a confessional tone: "Pode me julgar, mas eu tô viciada nesse [PRODUTO]. Toda vez que acaba eu compro de novo sem pensar duas vezes. E olha — sem culpa nenhuma." Shows product close to camera, uses it naturally. Warm, relatable, real energy. Brazilian Portuguese, natural lip sync. No music, no subtitles, ambient home sounds.</div>
+              <span class="pc-tag pt-selfie">📱 Selfie</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">SEL #04</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Compra Inteligente — Vale Cada Centavo</div>
+              <div class="pc-text">Create an ultra-realistic handheld selfie video for TikTok Shop. Brazilian creator in a casual selfie setup, natural home light. Speaks pragmatically, slightly leaning toward camera: "Eu não gasto dinheiro à toa. E esse [PRODUTO] foi uma das compras mais inteligentes que eu fiz. Eu vou te contar exatamente o que me convenceu." Then explains calmly while showing the product. Practical and trustworthy — not hype-driven. Brazilian Portuguese, measured pace, natural delivery. No music, no subtitles, ambient sounds.</div>
+              <span class="pc-tag pt-selfie">📱 Selfie</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">SEL #05</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Mandei Pra Minha Mãe — Ela Amou</div>
+              <div class="pc-text">Create an ultra-realistic handheld selfie video for TikTok Shop. Brazilian creator, selfie mode, casual relaxed home setting, natural light. They speak warmly: "Sabe quando você acha algo tão bom que vai direto comprar pra sua mãe também? Esse [PRODUTO] foi assim. Ela me ligou no mesmo dia que chegou pra dizer que amou." Shows product while talking. Family-warm delivery, genuine enthusiasm without exaggeration. Brazilian Portuguese, natural pacing and lip sync. No music, no subtitles, ambient sounds.</div>
+              <span class="pc-tag pt-selfie">📱 Selfie</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">SEL #06</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Honestidade Acima de Tudo</div>
+              <div class="pc-text">Create an ultra-realistic handheld selfie video for TikTok Shop. Brazilian creator in a selfie setup, no ring light, just natural home lighting — the rawness is intentional. Speaks directly: "Vou ser honesta com vocês porque eu não tenho hábito de recomendar coisa ruim: esse [PRODUTO] é bom de verdade. Não é perfeito pra tudo, mas pra isso aqui ele entrega." Shows and demonstrates. Gives a nuanced, honest review that builds trust more than pure praise. Brazilian Portuguese, natural delivery. No music, no subtitles.</div>
+              <span class="pc-tag pt-selfie">📱 Selfie</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">SEL #07</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Recomendação do Dia — Direto ao Ponto</div>
+              <div class="pc-text">Create an ultra-realistic handheld selfie video for TikTok Shop. Brazilian creator in selfie mode, casual outfit, natural light. Starts the video mid-sentence with energy: "— e por isso que eu tô aqui: recomendação do dia, esse [PRODUTO]." Shows product immediately. Explains in a quick, punchy style — one main benefit, one honest observation, one closing line. Fast-paced but natural, not rushed. Brazilian Portuguese, authentic lip sync. No music, no subtitles, ambient room sounds only.</div>
+              <span class="pc-tag pt-selfie">📱 Selfie</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">SEL #08</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Presentei Minha Amiga — Ela Quer Mais</div>
+              <div class="pc-text">Create an ultra-realistic handheld selfie video for TikTok Shop. Brazilian creator in casual selfie setup, warm indoor light. Speaks with amusement: "Dei esse [PRODUTO] de presente pra minha amiga pensando que era um presentinho simples. Ela ficou me pedindo o link três vezes na semana seguinte. Então decidi postar aqui também." Shows product. Warm, slightly amused delivery. Feels like genuine word-of-mouth, not advertising. Brazilian Portuguese, natural lip sync. No music, no subtitles, ambient sounds.</div>
+              <span class="pc-tag pt-selfie">📱 Selfie</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">SEL #09</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Quem Já Tem Esse — Confirma Aqui</div>
+              <div class="pc-text">Create an ultra-realistic handheld selfie video for TikTok Shop. Brazilian creator in selfie mode, casual home setting, natural light. Speaks with inclusive community energy: "Quem já tem esse [PRODUTO] na casa — confirma aqui nos comentários porque eu sei que você concorda comigo." Shows the product confidently. Then continues: "E quem ainda não tem, o link tá ali em cima. Você não vai se arrepender." Warm, community-forward delivery. Brazilian Portuguese, natural pacing. No music, no subtitles, ambient room sounds.</div>
+              <span class="pc-tag pt-selfie">📱 Selfie</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">SEL #10</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Surpresa Boa — Não Esperava</div>
+              <div class="pc-text">Create an ultra-realistic handheld selfie video for TikTok Shop. Brazilian creator in selfie mode, relaxed posture, casual setting. Speaks with genuine surprise: "Não tava esperando gostar tanto desse [PRODUTO]. Comprei com zero expectativa e... aqui estou, fazendo vídeo sobre ele." Shows product with a slightly disbelieving laugh. Explains what surprised them. Authentic, self-aware, funny in a natural way. Brazilian Portuguese, natural delivery and lip sync. No music, no subtitles, ambient room sounds only.</div>
+              <span class="pc-tag pt-selfie">📱 Selfie</span>
+            </div>
+          </div>
+
+        </div>
+      </div></div>
+      </div>
+
+      <!-- GROUP 4: UNBOXING -->
+      <div class="prompt-group reveal">
+        <div class="prompt-group-header">
+          <div class="pg-icon pg-amber">📦</div>
+          <div class="pg-info">
+            <h3>Unboxing TikTok Shop</h3>
+            <p>O momento de abrir a embalagem gera ASMR natural e expectativa genuína. Altíssima retenção de visualização.</p>
+          </div>
+          <span class="pg-count">10 prompts</span>
+          <button class="pg-toggle">&#8964;</button>
+        </div>
+        <div class="pg-body"><div class="pg-body-inner"><div class="prompt-grid">
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UNB #01</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Chegou! — Ansiosa Para Abrir</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop unboxing video. A Brazilian creator opens a delivery package on a table. Everything feels authentic and unscripted. Show the package opening, removing [PRODUTO], holding it, and reacting naturally. The creator speaks: "Chegou! Eu tava muito ansiosa pra abrir esse [PRODUTO]." Continues talking naturally while showing the product from different angles — commenting on packaging quality, first impressions, texture, smell if relevant. Capture realistic package sounds and plastic sounds. Brazilian Portuguese, natural lip sync. No music. No text. No subtitles.</div>
+              <span class="pc-tag pt-unboxing">📦 Unboxing</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UNB #02</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Primeiro Contato — Impressão Honesta</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop unboxing video. Brazilian creator at a table with delivery box, natural indoor light. The creator films the unboxing and gives their raw first impressions. They speak while opening: "Primeiro contato com o [PRODUTO] — vou falar o que eu tô achando em tempo real." Comments on packaging, opening experience, what they see when they first take it out. Honest, detail-focused. Some moments of silence with just package sounds. Brazilian Portuguese, natural delivery. No music, no subtitles, ambient sounds and package sounds only.</div>
+              <span class="pc-tag pt-unboxing">📦 Unboxing</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UNB #03</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Pediu Junto com a Amiga — Unboxing Duplo</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop unboxing video. Brazilian creator at a table, two identical boxes visible — one for her and one for a friend. She opens hers first. Speaks: "Eu e minha amiga pedimos o [PRODUTO] juntas — ela ainda não abriu o dela então essa reação aqui é 100% minha." Opens package, reacts genuinely, holds product up, examines it closely, comments on size, quality, details. Warm and real. Brazilian Portuguese, authentic energy. Package opening sounds throughout. No music, no subtitles, no text.</div>
+              <span class="pc-tag pt-unboxing">📦 Unboxing</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UNB #04</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Chegou Antes do Prazo — Surpresa Boa</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop unboxing video. Brazilian creator opening a delivery package at a table, daylight setting. They show the delivery notification on the phone briefly then switch to the package. Speaks: "Prazo era sexta, chegou terça. Já começou bem, [PRODUTO]." Opens the box methodically, shows contents, reacts to product quality or presentation. The early delivery becomes part of the positive review. Natural unboxing sounds, authentic reactions. Brazilian Portuguese, natural delivery. No music, no subtitles, ambient and package sounds only.</div>
+              <span class="pc-tag pt-unboxing">📦 Unboxing</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UNB #05</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Unboxing ASMR — Deixa o Som Falar</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop unboxing video with ASMR focus. Brazilian creator at a clean table, close-up shots of hands opening the package deliberately and slowly. Minimal talking — creator only speaks briefly at the start: "Unboxing [PRODUTO] — deixa o som falar." Then continues mostly in silence with highly textured sounds: tape being peeled, box opening, tissue paper rustling, plastic wrap, the product being lifted out and placed on the table. A few quiet whispered observations about quality. Brazilian Portuguese, no music, no subtitles. Only rich authentic ambient and packaging sounds.</div>
+              <span class="pc-tag pt-unboxing">📦 Unboxing</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UNB #06</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">O Que Vem Dentro? — Todos os Itens</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop unboxing video. Brazilian creator at a table, box fully opened in front of them. They take out each item/component of [PRODUTO] one by one and lay them on the table. Speaks: "Vamos ver o que vem dentro do [PRODUTO]..." then names and reacts to each element as they remove it. Thorough, organized, informative. Ends with: "Parece bem completo, honestamente." Methodical and trustworthy delivery. Brazilian Portuguese, natural pacing. Package sounds throughout. No music, no subtitles, ambient sounds.</div>
+              <span class="pc-tag pt-unboxing">📦 Unboxing</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UNB #07</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Primeira Impressão Vs. Expectativa</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop unboxing video. Brazilian creator at a table, natural indoor light. Before opening, they share their expectation: "Baseado nas fotos eu esperava [describes visual expectation]." Then opens the package. After seeing the real product: "Na prática — [honest observation that compares to expectation]." Real-time comparison of expectation vs. reality, ideally with a positive surprise. Brazilian Portuguese, conversational delivery. Natural package sounds. No music, no subtitles, ambient sounds only.</div>
+              <span class="pc-tag pt-unboxing">📦 Unboxing</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UNB #08</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Presente Pra Si Mesmo — Merecido</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop unboxing video. Brazilian creator at a table, warm home lighting. They frame the purchase as a self-gift with a slightly proud tone: "Esse [PRODUTO] foi um presente que eu me dei. Sem ocasião especial — só porque eu decidi que eu merecia." Opens package slowly, shows product, handles it with satisfaction. The narrative of self-care and intentional purchase runs throughout. Brazilian Portuguese, warm and confident. Package sounds throughout. No music, no subtitles, ambient home sounds only.</div>
+              <span class="pc-tag pt-unboxing">📦 Unboxing</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UNB #09</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Comprei Pelo TikTok — Confiança Testada</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop unboxing video. Brazilian creator at a table, casual home setting. They speak with slight vulnerability: "Todo mundo fala que é arriscado comprar pelo TikTok. Eu comprei. O [PRODUTO] chegou. Então vamos ver se valeu a confiança." Opens the package live, inspects everything carefully, comments on condition, quality, whether it matches the product page. Ends with a verdict. Honest, real-consumer energy. Brazilian Portuguese, natural delivery. Package sounds throughout. No music, no subtitles.</div>
+              <span class="pc-tag pt-unboxing">📦 Unboxing</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UNB #10</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Unboxing do Pedido Grande — Fui Comprar Tudo</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop unboxing video. Brazilian creator at a kitchen table with multiple boxes or a larger package. They speak with slightly amused self-awareness: "Eu fui comprar uma coisa só do TikTok Shop e vim com tudo isso. Mas o principal aqui — o [PRODUTO]." Focuses on unboxing and showing [PRODUTO] specifically, with occasional glances at the other boxes as context. Natural shopping habit humor without shame. Brazilian Portuguese, real energy. Package sounds throughout. No music, no subtitles, ambient sounds only.</div>
+              <span class="pc-tag pt-unboxing">📦 Unboxing</span>
+            </div>
+          </div>
+
+        </div>
+      </div></div>
+      </div>
+
+      <!-- GROUP 5: DEMONSTRAÇÃO -->
+      <div class="prompt-group reveal">
+        <div class="prompt-group-header">
+          <div class="pg-icon pg-blue">🔬</div>
+          <div class="pg-info">
+            <h3>Uso Real / Demonstração do Produto</h3>
+            <p>Mostra o produto em ação na rotina real. Quanto mais próximo da realidade, maior a conversão.</p>
+          </div>
+          <span class="pg-count">10 prompts</span>
+          <button class="pg-toggle">&#8964;</button>
+        </div>
+        <div class="pg-body"><div class="pg-body-inner"><div class="prompt-grid">
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">DEM #01</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">É Mais Simples do Que Parece</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop product demonstration video. A Brazilian creator naturally uses [PRODUTO] during their daily routine. Show real interaction, close-up details, and authentic reactions. They speak: "Olha como funciona... é muito mais simples do que parece." Demonstrates each feature while speaking naturally — no exaggerated reactions, no scripted beats. Just calm, functional demonstration of how the product works in real life. Brazilian Portuguese, natural lip sync. No music, no captions, ambient sounds only.</div>
+              <span class="pc-tag pt-demo">🔬 Demo</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">DEM #02</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Uso Diário — 30 Dias Depois</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop product demonstration video. Brazilian creator demonstrates [PRODUTO] framing it as a 30-day update. They speak: "30 dias usando esse [PRODUTO] todo dia. Vou te mostrar como ele tá hoje e o que eu percebi." Demonstrates the product in a worn-in, confident way — shows any wear, continued performance, or results over time. Trustworthy, long-term-user energy. Brazilian Portuguese, natural delivery. No exaggerated reactions. No music, no captions, ambient sounds only.</div>
+              <span class="pc-tag pt-demo">🔬 Demo</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">DEM #03</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Comparação — Antes de Ter vs. Depois</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop product demonstration video. Brazilian creator demonstrates the change [PRODUTO] made in their life or routine. Speaks: "Antes de ter o [PRODUTO], eu fazia assim — [describes old way or problem]. Agora, olha só." Demonstrates the product in use. The contrast between before and after is shown through narration and the demonstration. Grounded, relatable. Brazilian Portuguese, natural delivery. Close-up product detail shots. No music, no captions, ambient sounds only.</div>
+              <span class="pc-tag pt-demo">🔬 Demo</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">DEM #04</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Teste de Resistência / Durabilidade</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop product demonstration video. Brazilian creator performs a real durability or stress test relevant to [PRODUTO]. Speaks: "Vou testar aqui na frente de vocês se esse [PRODUTO] aguenta de verdade." Conducts a simple, clear test and shows results honestly. If the product passes, the reaction is calm and satisfied. If it has any limitation, notes it honestly. Real-consumer testing energy. Brazilian Portuguese, natural pacing. No music, no captions, ambient sounds including any test sounds.</div>
+              <span class="pc-tag pt-demo">🔬 Demo</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">DEM #05</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Demonstração Silenciosa — Resultado Visível</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop product demonstration video with minimal narration. Brazilian creator uses [PRODUTO] mostly without commentary — just one opening line: "Resultado visível em tempo real. Assiste." Then demonstrates the product showing a clear before-state and the result after use, with close-up camera work. The result speaks for itself. Brief closing line: "Entendeu?" Calm, confident. Brazilian Portuguese, perfect lip sync on minimal speech. No music, no captions, only authentic ambient sounds and product-use sounds.</div>
+              <span class="pc-tag pt-demo">🔬 Demo</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">DEM #06</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Como Usar Do Jeito Certo</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop product demonstration video. Brazilian creator demonstrates [PRODUTO] with tutorial-style framing. Speaks: "Muita gente usa esse [PRODUTO] do jeito errado. Deixa eu te mostrar como usar do jeito certo pra ter o resultado de verdade." Shows incorrect use briefly, then demonstrates proper use step by step. Educational and helpful tone — positions the creator as knowledgeable without being condescending. Brazilian Portuguese, clear pacing. No music, no captions, ambient sounds only.</div>
+              <span class="pc-tag pt-demo">🔬 Demo</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">DEM #07</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Demonstração Para Iniciantes</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop product demonstration video. Brazilian creator demonstrates [PRODUTO] for someone who has never used it before. Speaks warmly: "Se você nunca usou um [PRODUTO] antes, esse aqui é um ótimo começo. Vou te mostrar do zero." Demonstrates every step with patience and clarity, naming what they're doing. Inclusive and welcoming energy. Brazilian Portuguese, clear enunciation, natural pacing. No music, no captions, ambient sounds only.</div>
+              <span class="pc-tag pt-demo">🔬 Demo</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">DEM #08</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Múltiplos Usos — Versatilidade</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop product demonstration video. Brazilian creator demonstrates multiple different ways to use [PRODUTO]. Speaks: "Esse [PRODUTO] eu uso de pelo menos três formas diferentes. Deixa eu te mostrar todas." Demonstrates each use case concisely with quick scene changes within the same continuous-feeling video. Ends with: "Pois é. Vale o dinheiro." Practical, informative, no filler. Brazilian Portuguese, efficient delivery. No music, no captions, ambient sounds only.</div>
+              <span class="pc-tag pt-demo">🔬 Demo</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">DEM #09</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Reação Genuína — Filmou no Momento Certo</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop product demonstration video. Brazilian creator uses [PRODUTO] and the video captures a genuine moment of the product working well. The creator seems slightly surprised by how well it works even after using it before. Speaks: "Toda vez que eu uso esse [PRODUTO] eu me surpreendo de novo. Olha isso..." Shows the result in real time. Authentic "wow" moment that feels caught rather than staged. Brazilian Portuguese, natural delivery. No music, no captions, ambient sounds and product sounds.</div>
+              <span class="pc-tag pt-demo">🔬 Demo</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">DEM #10</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Demonstração Rápida — 60 Segundos</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop product demonstration video. Brazilian creator performs a fast, tight demonstration of [PRODUTO] in under 60 seconds. Opening: "60 segundos pra te convencer que esse [PRODUTO] vale a pena." Shows the product, demonstrates it, shows one key result, and closes: "Acredita em mim agora?" Fast-paced but not rushed — every second has content. Brazilian Portuguese, energetic but natural. No music, no captions, ambient sounds only.</div>
+              <span class="pc-tag pt-demo">🔬 Demo</span>
+            </div>
+          </div>
+
+        </div>
+      </div></div>
+      </div>
+
+      <!-- GROUP 6: MODA -->
+      <div class="prompt-group reveal">
+        <div class="prompt-group-header">
+          <div class="pg-icon pg-pink">👗</div>
+          <div class="pg-info">
+            <h3>Movimento — Moda / Roupas / Calçados</h3>
+            <p>Vídeos de fit check e outfit do dia. Essencial para vender roupas, sapatos e acessórios no TikTok Shop.</p>
+          </div>
+          <span class="pg-count">10 prompts</span>
+          <button class="pg-toggle">&#8964;</button>
+        </div>
+        <div class="pg-body"><div class="pg-body-inner"><div class="prompt-grid">
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">MOD #01</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Ficou Melhor do Que Imaginava</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop fashion video. A Brazilian creator records themselves wearing [PRODUTO]. Natural walking, turning around, adjusting clothes, and showing different angles. Looks like a casual TikTok outfit check. They speak: "Eu precisava mostrar como essa [PRODUTO] veste no corpo porque ela ficou muito melhor do que eu imaginava." Continues walking and showing movement naturally — front, side, back views. Genuine fit satisfaction in body language and voice. Brazilian Portuguese, natural lip sync. No music. No subtitles. Natural outdoor or indoor ambience.</div>
+              <span class="pc-tag pt-moda">👗 Moda</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">MOD #02</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Tamanho Certo — Guia de Modelagem</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop fashion video. Brazilian creator wearing [PRODUTO], walking and moving naturally in a home or outdoor setting. They share sizing information genuinely: "Eu sou [medida/tamanho] e comprei o [tamanho]. Olha como ficou." Shows the fit from multiple angles — front, back, waist area, how it moves with the body. Helpful and informative without being a formal review. Natural confidence while showing the look. Brazilian Portuguese, authentic lip sync. No music, no subtitles, ambient sounds.</div>
+              <span class="pc-tag pt-moda">👗 Moda</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">MOD #03</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Outfit do Dia — Combinação Fácil</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop fashion video. Brazilian creator shows themselves wearing [PRODUTO] as part of a complete outfit for the day. They walk through a room or outdoor space naturally. Speaks: "Outfit de hoje — e esse [PRODUTO] foi a peça que amarrou tudo. Não é difícil combinar não, olha." Shows how the piece works with the rest of the outfit with natural movement and camera showing full-length views. Effortless styling energy. Brazilian Portuguese, natural delivery. No music, no subtitles, ambient sounds.</div>
+              <span class="pc-tag pt-moda">👗 Moda</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">MOD #04</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Conforto e Estilo — Os Dois Juntos</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop fashion video. Brazilian creator wearing [PRODUTO] and moving comfortably and naturally. Body language clearly shows ease and comfort — no stiffness, natural gait. They speak: "Eu vou precisar de duas coisas: conforto e estilo. Esse [PRODUTO] entregou os dois ao mesmo tempo." Demonstrates natural movement — sitting down, standing up, walking — showing the product moves with the body. Brazilian Portuguese, natural delivery. No music, no subtitles, ambient sounds.</div>
+              <span class="pc-tag pt-moda">👗 Moda</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">MOD #05</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Recebeu Elogio na Rua</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop fashion video. Brazilian creator walks naturally wearing [PRODUTO] outdoors, natural daylight, real street or park setting. Tells a story while walking: "Eu saí com esse [PRODUTO] hoje e já recebi dois elogios. Então eu precisava vir aqui te mostrar." Shows the piece from multiple angles while continuing to walk or standing briefly to show details. Warm, social proof energy. Brazilian Portuguese, natural delivery. No music, no subtitles, outdoor ambient sounds.</div>
+              <span class="pc-tag pt-moda">👗 Moda</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">MOD #06</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Antes de Sair — Olhada Final</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop fashion video. Brazilian creator does a final outfit check before leaving home, filmed in a hallway or near a door. They adjust [PRODUTO] slightly, smooth it down, and take a final look — then turn to the camera. They speak: "Antes de sair. Dá pra acreditar que esse [PRODUTO] foi [preço aproximado]? Porque eu não acredito." Turns naturally to show front and back. Confident, pleased energy. Brazilian Portuguese, natural delivery. No music, no subtitles, indoor ambient sounds.</div>
+              <span class="pc-tag pt-moda">👗 Moda</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">MOD #07</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Diferentes Looks — Uma Peça Só</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop fashion video. Brazilian creator shows [PRODUTO] styled in three different ways — three quick outfit changes, each shown with natural movement. They speak between looks: "Uma peça, três jeitos de usar." Shows each look from front and back with a natural turn. Brief commentary on each: "Esse é mais casual... esse é mais elegante... e esse pra trabalhar." Demonstrates versatility without it being a formal fashion show. Brazilian Portuguese, natural delivery. No music, no subtitles, ambient sounds.</div>
+              <span class="pc-tag pt-moda">👗 Moda</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">MOD #08</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Corpo Real — Tudo Veste</div>
+              <div class="pc-body">
+              <div class="pc-text">Create an ultra-realistic TikTok Shop fashion video. Brazilian creator wearing [PRODUTO] and moving confidently — not a model figure, a real person with a natural body. They speak with body-positive confidence: "Eu não tenho corpo de manequim e olha como esse [PRODUTO] veste bem do mesmo jeito. Serve em qualquer corpo." Shows the fit naturally from multiple angles without hiding anything. Empowering and inclusive tone. Brazilian Portuguese, confident lip sync. No music, no subtitles, ambient sounds.</div>
+              <span class="pc-tag pt-moda">👗 Moda</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">MOD #09</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Qualidade da Peça — Nos Detalhes</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop fashion video. Brazilian creator wearing [PRODUTO] and drawing attention to quality details. Shows close-ups while speaking: "A qualidade dessa peça nos detalhes... olha o acabamento aqui, o material aqui..." Points to specific elements — seams, fabric texture, hardware, stitching. Then pulls back to full view and walks naturally to show the overall look. Educated and appreciative delivery. Brazilian Portuguese, natural pacing. No music, no subtitles, ambient sounds.</div>
+              <span class="pc-tag pt-moda">👗 Moda</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">MOD #10</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">Surpresa de Preço — Parece Caro</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop fashion video. Brazilian creator wearing [PRODUTO] and moving naturally, walking and turning. They speak: "Todo mundo perguntou quanto custou esse [PRODUTO]. Ninguém acreditou quando eu falei. Olha como tá no corpo e me diz se parece barato." Shows full-length views, close-ups of material and details, confident movement. Lets the value proposition sink in visually. Brazilian Portuguese, natural delivery. No music, no subtitles, outdoor or indoor ambient sounds.</div>
+              <span class="pc-tag pt-moda">👗 Moda</span>
+            </div>
+          </div>
+
+        </div>
+      </div></div>
+      </div>
+
+      <!-- GROUP 7: UGC UNIVERSAL -->
+      <div class="prompt-group reveal">
+        <div class="prompt-group-header">
+          <div class="pg-icon pg-teal">⭐</div>
+          <div class="pg-info">
+            <h3>Template Universal — UGC para Qualquer Produto</h3>
+            <p>Os prompts mais versáteis do pack. Funcionam para qualquer categoria de produto no TikTok Shop.</p>
+          </div>
+          <span class="pg-count">10 prompts</span>
+          <button class="pg-toggle">&#8964;</button>
+        </div>
+        <div class="pg-body"><div class="pg-body-inner"><div class="prompt-grid">
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UGC #01</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">UGC Universal — Recomendação Genuína</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop UGC video in Brazilian Portuguese. Everything must look like authentic user-generated content filmed on an iPhone 16 Pro. Natural lighting. Handheld smartphone movement. Real Brazilian home environment. Authentic facial expressions. Perfect native Brazilian Portuguese lip sync. The creator naturally interacts with [PRODUTO], speaking like they are recommending something they genuinely use. No commercial look. No cinematic lighting. No beauty filters. No subtitles. No text on screen. No background music. Only realistic ambient sounds.</div>
+              <span class="pc-tag pt-ugc">⭐ UGC</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UGC #02</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">UGC — Dia a Dia Com o Produto</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop UGC video in Brazilian Portuguese. Filmed on an iPhone 16 Pro. No studio. No production. Just a real Brazilian person in their real environment — at home, kitchen, bedroom, or outdoors. The creator uses [PRODUTO] as if it's an ordinary part of their day, mentioning: "Eu uso esse [PRODUTO] praticamente todo dia. Deixa eu te mostrar como ele entra na minha rotina." Natural integration into daily life. No commercial energy. Authentic ambient sounds. No music, no subtitles, no text, no filters.</div>
+              <span class="pc-tag pt-ugc">⭐ UGC</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UGC #03</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">UGC — O Que Me Surpreendeu</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop UGC video in Brazilian Portuguese. iPhone 16 Pro, real home environment, natural lighting. The creator speaks to camera while holding [PRODUTO]: "Vou te contar o que me surpreendeu nesse [PRODUTO] porque eu não esperava." Lists two or three genuine observations. Uses the product naturally while talking. Low production value is intentional and authentic. Real person energy throughout — hesitations, natural pauses, authentic expressions. No music, no subtitles, no text, no filters, ambient sounds only.</div>
+              <span class="pc-tag pt-ugc">⭐ UGC</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UGC #04</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">UGC — Sem Paciência Pra Enrolação</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop UGC video in Brazilian Portuguese. iPhone 16 Pro, no-frills home setting, natural light. The creator is direct and impatient: "Eu não tenho paciência pra enrolação então: esse [PRODUTO] funciona, vale o preço, e eu recomendo. Vê aqui." Shows product quickly and demonstrates one key function. Fast-talking but natural — like a Brazilian friend who gets to the point. Authentic and slightly blunt energy. No music, no subtitles, no text, no filters, ambient sounds only.</div>
+              <span class="pc-tag pt-ugc">⭐ UGC</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UGC #05</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">UGC — Descoberta Recente</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop UGC video in Brazilian Portuguese. iPhone 16 Pro, casual home environment, genuine lighting. The creator acts as if sharing a recent discovery: "Descobri esse [PRODUTO] faz pouco tempo e já não consigo imaginar sem." Shows the product naturally, uses it, describes what it's like to use. Energy of someone who recently converted and is excited but not over-the-top. Natural Brazilian speech with authentic hesitations and natural pace. No music, no subtitles, no text, no filters, ambient sounds only.</div>
+              <span class="pc-tag pt-ugc">⭐ UGC</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UGC #06</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">UGC — Review Rápido e Honesto</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop UGC video in Brazilian Portuguese. iPhone 16 Pro, natural home environment. The creator frames the video as a quick honest review: "Review rápido e honesto do [PRODUTO]: o que é bom, o que não é tão bom, e se eu compraria de novo." Covers positives, one small honest critique, and ends with yes/no recommendation. Balanced, credible, real-person delivery. No scripted feel. Brazilian Portuguese with natural lip sync. No music, no subtitles, no text on screen, ambient sounds only.</div>
+              <span class="pc-tag pt-ugc">⭐ UGC</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UGC #07</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">UGC — Compra Impulsiva que Valeu</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop UGC video in Brazilian Portuguese. iPhone 16 Pro, home or casual setting. Creator admits to an impulse purchase: "Comprei esse [PRODUTO] por impulso — sem pesquisar muito, vi e fui. E vou te contar: foi uma das melhores compras por impulso da minha vida." Shows and uses the product. Slightly amused self-awareness about the impulse but genuinely pleased with the result. Brazilian Portuguese with natural warmth. No music, no subtitles, no text, no filters, ambient sounds only.</div>
+              <span class="pc-tag pt-ugc">⭐ UGC</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UGC #08</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">UGC — Para Quem Tava com Dúvida</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop UGC video in Brazilian Portuguese. iPhone 16 Pro, real home setting, authentic lighting. Creator addresses people who may be hesitant: "Esse vídeo é pra quem tava com dúvida de comprar o [PRODUTO]. Eu também tava. Comprei. E é por isso que eu tô aqui agora." Shows product, uses it, and addresses common hesitations calmly with real-user confidence. No sales pressure — just honest experience. Brazilian Portuguese, natural pacing. No music, no subtitles, no text, no filters, ambient sounds only.</div>
+              <span class="pc-tag pt-ugc">⭐ UGC</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UGC #09</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">UGC — Presente que Faço Para Mim</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop UGC video in Brazilian Portuguese. iPhone 16 Pro, warm home environment. Creator frames [PRODUTO] as intentional self-care: "Tem coisa que a gente compra porque precisa. Esse [PRODUTO] eu compro porque eu me cuido. E não me arrependo." Shows product with pride and ease. The self-investment narrative runs throughout the demonstration. Confident, warm, self-assured delivery. Brazilian Portuguese, natural lip sync. No music, no subtitles, no text, no filters, ambient sounds only.</div>
+              <span class="pc-tag pt-ugc">⭐ UGC</span>
+            </div>
+          </div>
+
+          <div class="prompt-card">
+            <div class="pc-header"><span class="pc-num">UGC #10</span><button class="pc-copy" onclick="copyPrompt(this)" title="Copiar prompt">📋</button></div>
+            <div class="pc-body">
+              <div class="pc-title">UGC — Link na Bio (CTA Final)</div>
+              <div class="pc-text">Create an ultra-realistic TikTok Shop UGC video in Brazilian Portuguese. iPhone 16 Pro, casual home environment, authentic lighting. Creator shows [PRODUTO], uses it, gives a brief genuine review, and ends with a natural call to action: "Se você quiser, o link tá ali em cima. Sem pressa — mas acho que você vai se arrepender de demorar muito." The CTA feels like advice, not a sales push. Relaxed confidence throughout. Brazilian Portuguese, natural delivery. No music, no subtitles, no text on screen, no filters, ambient sounds only.</div>
+              <span class="pc-tag pt-ugc">⭐ UGC</span>
+            </div>
+          </div>
+
+        </div>
+      </div></div>
+      </div>
+
+    </div>
+    <!-- END SHOP TAB -->
+
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="section" style="background:var(--dark2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap-sm">
+    <div class="sec-header reveal">
+      <div class="sec-kicker">Passo a passo</div>
+      <h2 class="sec-title">Como usar esses <span class="hl">prompts</span></h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-step reveal">
+        <div class="step-bubble">1</div>
+        <div class="step-body">
+          <h3>Copie o prompt</h3>
+          <p>Clique no botão 📋 em qualquer card para copiar o prompt automaticamente para a área de transferência.</p>
+        </div>
+      </div></div>
+      </div>
+      <div class="how-step reveal delay-1">
+        <div class="step-bubble">2</div>
+        <div class="step-body">
+          <h3>Escolha a ferramenta de IA</h3>
+          <p>Cole o prompt na ferramenta de geração de vídeo com IA de sua preferência.</p>
+          <div class="step-tools">
+            <span class="step-tool">Kling 3.0</span>
+            <span class="step-tool">Seedance</span>
+            <span class="step-tool">Google Flow</span>
+            <span class="step-tool">Hailuo</span>
+            <span class="step-tool">Runway</span>
+          </div>
+        </div>
+      </div></div>
+      </div>
+      <div class="how-step reveal delay-2">
+        <div class="step-bubble">3</div>
+        <div class="step-body">
+          <h3>Adicione sua referência (Virais)</h3>
+          <p>Para os prompts de vídeos virais, adicione uma imagem de referência do personagem. Para os prompts de TikTok Shop, substitua [PRODUTO] pelo nome do seu produto.</p>
+        </div>
+      </div></div>
+      </div>
+      <div class="how-step reveal delay-3">
+        <div class="step-bubble">4</div>
+        <div class="step-body">
+          <h3>Gere e publique</h3>
+          <p>Gere o vídeo, baixe, adicione o áudio se necessário, e publique no TikTok. Teste variações do mesmo prompt para encontrar o melhor resultado.</p>
+        </div>
+      </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div class="sec-kicker">Dicas profissionais</div>
+      <h2 class="sec-title">Maximize seus <span class="hl">resultados</span></h2>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card reveal">
+        <div class="tip-icon">🎯</div>
+        <h3>Virais primeiro, Shop depois</h3>
+        <p>Você precisa de pelo menos 1.000 seguidores para abrir o TikTok Shop. Use os prompts virais para crescer a conta e depois ative os prompts de produto.</p>
+      </div>
+      <div class="tip-card reveal delay-1">
+        <div class="tip-icon">🔄</div>
+        <h3>Varie os diálogos</h3>
+        <p>Cada prompt tem uma fala base — mude palavras, adapte para seu estilo de fala ou produto específico para resultados mais personalizados.</p>
+      </div>
+      <div class="tip-card reveal delay-2">
+        <div class="tip-icon">📱</div>
+        <h3>Sempre 9:16 vertical</h3>
+        <p>Todos os prompts foram criados para formato vertical. Nunca gere vídeo horizontal para TikTok — o algoritmo penaliza.</p>
+      </div>
+      <div class="tip-card reveal delay-3">
+        <div class="tip-icon">🔁</div>
+        <h3>Reutilize personagens</h3>
+        <p>Nos vídeos virais de roça, guarde a imagem de referência do personagem e use o mesmo em múltiplos prompts para criar consistência de conta.</p>
+      </div>
+      <div class="tip-card reveal delay-4">
+        <div class="tip-icon">⚡</div>
+        <h3>Teste múltiplas versões</h3>
+        <p>Gere 3–5 versões do mesmo prompt e escolha a melhor. As IAs de vídeo têm variação natural — o primeiro resultado raramente é o melhor.</p>
+      </div>
+      <div class="tip-card reveal delay-5">
+        <div class="tip-icon">💬</div>
+        <h3>Adicione áudio real</h3>
+        <p>Para os prompts de diálogo, considere usar ferramentas de voice cloning em português para o áudio final — garante mais naturalidade do que o áudio gerado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="section" style="background:var(--dark2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div class="sec-kicker">Ferramentas recomendadas</div>
+      <h2 class="sec-title">Use com essas <span class="hl">IAs</span></h2>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card reveal">
+        <div class="tool-name">Kling 3.0</div>
+        <div class="tool-desc">Melhor para consistência de personagem e movimentos naturais. Suporte a imagem de referência. Recomendado para virais de roça e família.</div>
+        <span class="tool-badge tb-rec">⭐ Recomendado</span>
+      </div>
+      <div class="tool-card reveal delay-1">
+        <div class="tool-name">Seedance</div>
+        <div class="tool-desc">Excelente para vídeos UGC e selfie. Renderiza câmera handheld com alta realidade. Ótimo para prompts de TikTok Shop.</div>
+        <span class="tool-badge tb-rec">⭐ Recomendado</span>
+      </div>
+      <div class="tool-card reveal delay-2">
+        <div class="tool-name">Google Flow</div>
+        <div class="tool-desc">Forte para cenas de ambiente e cinematografia. Bom para prompts de mulher da roça e vídeos externos com muito movimento de câmera natural.</div>
+        <span class="tool-badge tb-paid">Pago</span>
+      </div>
+      <div class="tool-card reveal delay-3">
+        <div class="tool-name">Hailuo</div>
+        <div class="tool-desc">Rápido e econômico para testes. Bom para gerar múltiplas variações antes de escolher a versão final em outra plataforma.</div>
+        <span class="tool-badge tb-paid">Pago</span>
+      </div>
+      <div class="tool-card reveal delay-4">
+        <div class="tool-name">Runway Gen-4</div>
+        <div class="tool-desc">Muito bom para demonstração de produto (prompts DEM). Renderiza close-ups de mãos e objetos com alta fidelidade.</div>
+        <span class="tool-badge tb-paid">Pago</span>
+      </div>
+      <div class="tool-card reveal delay-5">
+        <div class="tool-name">ElevenLabs</div>
+        <div class="tool-desc">Para voice cloning em português do Brasil. Use junto com qualquer gerador de vídeo para adicionar áudio realista aos personagens gerados.</div>
+        <span class="tool-badge tb-paid">Pago</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="wrap-sm">
+    <div class="sec-header reveal">
+      <div class="sec-kicker">Dúvidas frequentes</div>
+      <h2 class="sec-title">Perguntas <span class="hl">frequentes</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Preciso ter o TikTok Shop ativo para usar os prompts de produto?</div>
+        <div class="faq-a"><div class="faq-a-inner">Não. Você pode criar os vídeos com os prompts de TikTok Shop antes mesmo de ter o Shop ativo. Use o tempo de criação de conta e crescimento (usando os prompts virais) para já preparar seu banco de conteúdo de produto. Quando o Shop abrir, você já tem vídeos prontos para publicar.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Os prompts funcionam em qualquer ferramenta de IA de vídeo?</div>
+        <div class="faq-a"><div class="faq-a-inner">Sim, todos os prompts foram escritos em inglês para máxima compatibilidade com ferramentas de IA. Funcionam no Kling, Seedance, Google Flow, Runway, Hailuo e qualquer outra plataforma que aceite prompts de texto para geração de vídeo. O diálogo dos personagens permanece em Português Brasileiro.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Posso usar o mesmo prompt várias vezes para criar variações?</div>
+        <div class="faq-a"><div class="faq-a-inner">Sim, e é altamente recomendado! As IAs de vídeo geram variações diferentes a cada geração mesmo com o mesmo prompt. Rode o mesmo prompt 3–5 vezes e escolha o melhor resultado. Você também pode fazer pequenas modificações para obter variações específicas.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Como funciona a referência de personagem nos prompts virais?</div>
+        <div class="faq-a"><div class="faq-a-inner">Em ferramentas como Kling 3.0 e Seedance, você pode fazer upload de uma imagem de referência (seu personagem) junto com o prompt. A IA tenta manter a consistência visual desse personagem no vídeo gerado. Escolha uma imagem de referência clara, bem iluminada e no enquadramento mais próximo do que você quer gerar.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Preciso usar um produto real ou posso criar um produto fictício?</div>
+        <div class="faq-a"><div class="faq-a-inner">Para fins de teste e estudo, você pode usar qualquer produto nos prompts. Para publicação real no TikTok Shop, você precisa ter o produto cadastrado na plataforma e seguir as diretrizes do TikTok. Nunca publique um vídeo de produto gerado por IA como se fosse um vídeo real seu sem disclosure adequado.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Qual é a diferença entre os prompts virais e os de TikTok Shop?</div>
+        <div class="faq-a"><div class="faq-a-inner">Os prompts virais têm como objetivo crescer a conta — eles criam personagens e situações que geram engajamento orgânico (seguidores, curtidas, comentários) sem vender nada. Os prompts de TikTok Shop têm como objetivo vender produtos — eles simulam criadores recomendando produtos de forma autêntica. Estratégia ideal: use os virais para crescer, depois monetize com os de Shop.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <p>CRIA Shop Pack · Complemento exclusivo CRIA · Todos os prompts são para uso pessoal e comercial</p>
+    <p style="margin-top:8px"><a href="#">@dg_vfx</a> · <a href="#">cria.club</a></p>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Voltar ao topo">↑</button>
+
+<script>
+// NAV SCROLL
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+});
+
+// REVEAL ANIMATION
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// TAB SWITCH
+function switchTab(tab) {
+  document.querySelectorAll('.cat-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  event.target.classList.add('active');
+  // Re-trigger reveals for newly visible elements
+  document.querySelectorAll('#tab-' + tab + ' .reveal').forEach(el => {
+    if (!el.classList.contains('visible')) obs.observe(el);
+  });
+}
+
+// COPY PROMPT
+function copyPrompt(btn) {
+  const card = btn.closest('.prompt-card');
+  const text = card.querySelector('.pc-text').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '📋'; btn.classList.remove('copied'); }, 2000);
+  }).catch(() => {
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '📋'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+// FAQ TOGGLE
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// GROUP TOGGLE
+function toggleGroup(group) {
+  if (!group) return;
+  group.classList.toggle('open');
+}
+
+// Wire group headers to toggle on click
+document.querySelectorAll('.prompt-group-header').forEach(header => {
+  header.addEventListener('click', function() {
+    toggleGroup(this.closest('.prompt-group'));
+  });
+});
+
+// Wire standalone toggle buttons (stop propagation so header doesn't double-fire)
+document.querySelectorAll('.pg-toggle').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    toggleGroup(this.closest('.prompt-group'));
+  });
+});
+
+// EXPAND / COLLAPSE ALL
+function expandAll(tabId) {
+  document.querySelectorAll('#' + tabId + ' .prompt-group').forEach(g => g.classList.add('open'));
+}
+function collapseAll(tabId) {
+  document.querySelectorAll('#' + tabId + ' .prompt-group').forEach(g => g.classList.remove('open'));
+}
+
+/* ============================================================
+   SUPABASE AUTH — CRIA SHOP PACK
+   ============================================================
+   CONFIGURE ANTES DE PUBLICAR:
+   1. Crie um projeto em supabase.com
+   2. Crie a tabela com o SQL do README-SUPABASE.md
+   3. Substitua SUPABASE_URL e SUPABASE_ANON_KEY abaixo
+   ============================================================ */
+
+const SUPABASE_URL   = 'https://omvdivadgmihkqnxiymx.supabase.co';
+const SUPABASE_ANON  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9tdmRpdmFkZ21paGtxbnhpeW14Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxMTg4OTUsImV4cCI6MjEwNTY5NDg5NX0.hqxlv1JK6fKkGH_-IYftY-RO6qF_r5Ie1TC2hARRE3U';
+const TABLE_NAME     = 'compradores_shop';
+const SESSION_KEY    = 'cria_shop_user';
+
+// ── Helpers ──────────────────────────────────────────────────
+
+function showMsg(text, type) { // type: 'err' | 'ok'
+  const el = document.getElementById('lg-msg');
+  el.textContent = text;
+  el.className = 'lg-msg show ' + type;
+}
+
+function setLoading(on) {
+  const btn = document.getElementById('lg-btn');
+  btn.classList.toggle('loading', on);
+  btn.disabled = on;
+}
+
+function setInputState(state) { // 'normal' | 'error' | 'success'
+  const inp = document.getElementById('lg-email');
+  inp.className = 'lg-input' + (state !== 'normal' ? ' ' + state : '');
+}
+
+function typeText(el, text, speed = 28) {
+  el.textContent = '';
+  let i = 0;
+  const t = setInterval(() => {
+    el.textContent += text[i++];
+    if (i >= text.length) clearInterval(t);
+  }, speed);
+}
+
+// ── Session ──────────────────────────────────────────────────
+
+function getSession() {
+  try { return JSON.parse(sessionStorage.getItem(SESSION_KEY)); }
+  catch { return null; }
+}
+
+function saveSession(email) {
+  sessionStorage.setItem(SESSION_KEY, JSON.stringify({ email, ts: Date.now() }));
+}
+
+function clearSession() {
+  sessionStorage.removeItem(SESSION_KEY);
+}
+
+// ── Auth Flow ────────────────────────────────────────────────
+
+async function verificarAcesso() {
+  const email = document.getElementById('lg-email').value.trim().toLowerCase();
+
+  if (!email || !email.includes('@')) {
+    setInputState('error');
+    showMsg('⚠ Digite um e-mail válido.', 'err');
+    return;
+  }
+
+  setLoading(true);
+  setInputState('normal');
+  document.getElementById('lg-msg').className = 'lg-msg';
+
+  // Atualiza visual animado
+  typeText(document.getElementById('lgVisualText'), 'verificando ' + email + '...');
+
+  try {
+    const url = `${SUPABASE_URL}/rest/v1/${TABLE_NAME}?email=eq.${encodeURIComponent(email)}&ativo=eq.true&select=email,nome`;
+    const res = await fetch(url, {
+      headers: {
+        'apikey': SUPABASE_ANON,
+        'Authorization': 'Bearer ' + SUPABASE_ANON,
+        'Content-Type': 'application/json',
+      }
+    });
+
+    if (!res.ok) throw new Error('Erro na requisição: ' + res.status);
+
+    const data = await res.json();
+
+    if (data && data.length > 0) {
+      // ✅ ACESSO LIBERADO
+      const user = data[0];
+      saveSession(user.email);
+      setInputState('success');
+      showMsg('✓ Acesso verificado! Entrando...', 'ok');
+      typeText(document.getElementById('lgVisualText'), '✓ acesso liberado — ' + user.email);
+      setTimeout(() => entrar(user.email, user.nome), 900);
+    } else {
+      // ❌ NÃO ENCONTRADO
+      setInputState('error');
+      showMsg('✗ E-mail não encontrado. Verifique se usou o mesmo e-mail da compra.', 'err');
+      typeText(document.getElementById('lgVisualText'), 'aguardando autenticação...');
+      setLoading(false);
+    }
+
+  } catch (err) {
+    console.error(err);
+    setInputState('error');
+    showMsg('⚠ Erro ao verificar. Tente novamente em instantes.', 'err');
+    typeText(document.getElementById('lgVisualText'), 'erro — tente novamente');
+    setLoading(false);
+  }
+}
+
+function entrar(email, nome) {
+  // Anima saída do login gate
+  document.getElementById('login-gate').classList.add('hiding');
+
+  // Mostra info no nav
+  const label = nome ? nome.split(' ')[0] : email;
+  const navUser = document.getElementById('navUser');
+  navUser.innerHTML = '👤 ' + label;
+  navUser.classList.add('show');
+  document.getElementById('navLogout').classList.add('show');
+
+  // Remove gate do DOM após animação
+  setTimeout(() => {
+    const gate = document.getElementById('login-gate');
+    if (gate) gate.remove();
+  }, 600);
+}
+
+function logout() {
+  clearSession();
+  // Recarrega a página para mostrar o login
+  window.location.reload();
+}
+
+// ── Init: checar sessão salva ─────────────────────────────────
+
+(function init() {
+  const session = getSession();
+  if (session && session.email) {
+    // Já autenticado nesta sessão
+    entrar(session.email, null);
+  } else {
+    // Mostrar gate, focar input
+    setTimeout(() => {
+      const inp = document.getElementById('lg-email');
+      if (inp) inp.focus();
+    }, 200);
+  }
+
+  // Enter no input dispara verificação
+  document.getElementById('lg-email').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') verificarAcesso();
+  });
+})();
+
+</script>
+
+</body>
+</html>
+
