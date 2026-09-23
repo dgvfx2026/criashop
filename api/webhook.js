@@ -10,32 +10,13 @@ export default async function handler(req, res) {
   try {
     const body = req.body
 
-    console.log('Kiwify payload recebido:', JSON.stringify(body))
+    // Log completo do payload para debug
+    console.log('=== KIWIFY WEBHOOK ===')
+    console.log('Headers:', JSON.stringify(req.headers))
+    console.log('Body:', JSON.stringify(body))
+    console.log('======================')
 
-    // ── Verificar token de segurança (Kiwify envia no header ou body) ──
-    const tokenRecebido =
-      req.headers['x-kiwify-token'] ||
-      req.headers['authorization'] ||
-      body?.token ||
-      ''
-
-    const tokenEsperado = process.env.WEBHOOK_TOKEN || ''
-
-    if (tokenEsperado && tokenRecebido !== tokenEsperado) {
-      console.warn('Token inválido recebido:', tokenRecebido)
-      return res.status(401).json({ error: 'Token inválido' })
-    }
-
-    // ── Extrair dados do payload Kiwify ──
-    const evento = body?.event || ''
-
-    // Só processa compras aprovadas (ignora outros eventos)
-    if (evento && evento !== 'order_approved') {
-      console.log('Evento ignorado:', evento)
-      return res.status(200).json({ ok: true, msg: 'Evento ignorado: ' + evento })
-    }
-
-    // Kiwify envia os dados assim: body.data.purchase.buyer_email
+    // Extrai email tentando todos os caminhos possíveis do Kiwify
     const email = (
       body?.data?.purchase?.buyer_email ||
       body?.purchase?.buyer_email ||
@@ -52,14 +33,23 @@ export default async function handler(req, res) {
       ''
     ).trim()
 
+    const evento = body?.event || 'sem_evento'
+    console.log('Evento:', evento, '| Email:', email, '| Nome:', nome)
+
+    // Se não tiver email válido (ex: teste do Kiwify sem dados reais)
     if (!email || !email.includes('@')) {
-      console.error('Email não encontrado no payload')
-      return res.status(400).json({ error: 'Email não encontrado no payload' })
+      console.log('Sem email válido no payload')
+      return res.status(200).json({ ok: true, msg: 'Sem email no payload' })
     }
 
-    // ── Inserir no Supabase via REST API ──
-    const supabaseUrl  = process.env.SUPABASE_URL
-    const serviceKey   = process.env.SUPABASE_SERVICE_KEY
+    // Insere no Supabase via REST
+    const supabaseUrl = process.env.SUPABASE_URL
+    const serviceKey  = process.env.SUPABASE_SERVICE_KEY
+
+    if (!supabaseUrl || !serviceKey) {
+      console.error('ERRO: variáveis SUPABASE_URL ou SUPABASE_SERVICE_KEY não configuradas!')
+      return res.status(500).json({ error: 'Variáveis de ambiente não configuradas' })
+    }
 
     const supabaseRes = await fetch(`${supabaseUrl}/rest/v1/compradores_shop`, {
       method: 'POST',
@@ -67,7 +57,7 @@ export default async function handler(req, res) {
         'apikey': serviceKey,
         'Authorization': `Bearer ${serviceKey}`,
         'Content-Type': 'application/json',
-        'Prefer': 'resolution=merge-duplicates', // upsert: não duplica se email já existir
+        'Prefer': 'resolution=merge-duplicates',
       },
       body: JSON.stringify({
         email,
@@ -77,17 +67,18 @@ export default async function handler(req, res) {
       }),
     })
 
+    const resText = await supabaseRes.text()
+    console.log('Supabase status:', supabaseRes.status, '| Resposta:', resText)
+
     if (!supabaseRes.ok) {
-      const errText = await supabaseRes.text()
-      console.error('Erro Supabase:', errText)
-      throw new Error('Erro ao inserir no Supabase: ' + errText)
+      throw new Error(`Supabase erro ${supabaseRes.status}: ${resText}`)
     }
 
-    console.log('✅ Comprador inserido/atualizado:', email)
+    console.log('✅ Comprador inserido:', email)
     return res.status(200).json({ success: true, email })
 
   } catch (err) {
-    console.error('Erro geral:', err.message)
+    console.error('ERRO GERAL:', err.message)
     return res.status(500).json({ error: err.message })
   }
 }
